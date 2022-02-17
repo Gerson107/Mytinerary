@@ -1,0 +1,21 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    gap:2rem;
+    list-style: none;
+}
+li:hover{
+    text-decoration:#C8A09D 4px underline;
+  
+}
+
+li{
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
