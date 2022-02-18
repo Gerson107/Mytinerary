@@ -1,0 +1,55 @@
+.hero{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+    margin-top: 5rem;
+  
+}
+.hero_info{
+    display:flex;
+    flex-direction: column;
+   justify-content: center;
+}
+.hero_info h1 {
+    color: white;
+    font-size: 96px;
+    font-weight: 700;
+}
+.hero_info p{
+    color: white;
+    font-size: 24px;
+    font-weight:400;
+    margin-top: 1rem;
+}
+.hero_info button {
+    background: #824D48;
+    width: 8rem;
+    margin-top: 1.4rem;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 2rem;
+    color: white;
+}
+button:hover{
+    background-color: white;
+    color:#824D48;
+    border:solid #824D48;
+}
+
+.hero_images{
+    display: flex;
+    gap:1rem;
+}
+.images1{
+    margin-top: -3rem;
+}
+.images3{
+    margin-top:-2rem;
+}
+.arrowIcon{
+    display:flex;
+    justify-content: center;
+    margin-top: 3rem;
+}

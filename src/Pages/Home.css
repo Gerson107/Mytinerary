@@ -2,4 +2,8 @@
 html {
    background-color: #28352E;
  font-family: 'Roboto', sans-serif;
+
+}
+img * {
+  max-width: 100%;
 }
