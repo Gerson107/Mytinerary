@@ -1,0 +1,19 @@
+.Footer {
+    background-color: #92763A;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+    color:white;
+}
+.Footer h2 {
+    font-size:18px;
+    font-weight:700;
+    margin-bottom: 1rem;
+}
+.Footer p {
+    font-size:12px;
+    font-weight: 400;
+}
+.footer_icon img{
+   margin-right: 2rem;
+}
