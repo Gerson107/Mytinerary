@@ -3,16 +3,16 @@ import './Footer.css'
 import instagram from './instagram.svg'
 import twitter from './twitter.svg'
 import github from './github.svg'
+import {Link as LinkRouter} from "react-router-dom"
 
 function Footer() {
   return (
     <div className="Footer">
+ 
         <div className="Footer_text">
-        <h2>Suport</h2>
-        <p>We are ready for the</p>
-        <p>Suport@mytinerary.com</p>
-        
-        
+        <h2>MyTinerary</h2>
+        <LinkRouter to="home" className="link">Home</LinkRouter>
+        <LinkRouter to="cities" className="link">Cities</LinkRouter>
         </div>
 
         <div className="Footer_text">
@@ -20,6 +20,7 @@ function Footer() {
         <p>Cra 19 #23-08</p>
         <p>57+3133761464</p>
         <p>57+3105157158</p>
+        <p>Suport@mytinerary.com</p>
         
         </div>
 
@@ -28,7 +29,7 @@ function Footer() {
         <p>© 2022 MyTinerary Inc. All rights reserved.</p>
         
         </div>
-
+     
         <div class="footer_icon">
             <img src={instagram}></img>
             <img src={twitter}></img>

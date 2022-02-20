@@ -4,6 +4,17 @@
     justify-content: space-between;
     padding: 3rem;
     color:white;
+    width: 0 auto;
+}
+/* .Footer_column{
+    display: flex;
+    flex-direction: row;
+     justify-content: space-between;
+ } */
+.Footer_text{
+    display: flex;
+    flex-direction: column;
+    
 }
 .Footer h2 {
     font-size:18px;
@@ -16,4 +27,20 @@
 }
 .footer_icon img{
    margin-right: 2rem;
+}
+@media screen and (max-width: 880px) {
+  
+    .footer_icon img{
+        margin-right: 0;
+     }
+     /* .Footer_column{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+     } */
+     .Footer {
+         flex-wrap: wrap;
+         padding: 1rem;
+        display: flex;
+     }
 }
