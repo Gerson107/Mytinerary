@@ -4,7 +4,7 @@
   gap: 2rem;
   margin: 2rem;
   margin-top: 5rem;
-  margin-bottom:  4rem;
+  margin-bottom: 4rem;
 }
 .hero_info {
   display: flex;
@@ -44,24 +44,23 @@
   margin-top: 4rem;
   display: flex;
   gap: 1rem;
-  
 }
 .images1 {
-  margin-top:-2rem;
-  filter: brightness(87%) contrast(55%) saturate(197%) sepia(80%) 
+  margin-top: -2rem;
+  filter: brightness(87%) contrast(55%) saturate(197%) sepia(80%);
 }
-.images2{
-  filter: invert(26%) 
+.images2 {
+  filter: invert(26%);
 }
 .images3 {
   margin-top: -3rem;
-  filter: hue-rotate(337deg) saturate(143%)
+  filter: hue-rotate(337deg) saturate(143%);
 }
 .images4 {
-  filter: contrast(158%) grayscale(73%) 
+  filter: contrast(158%) grayscale(73%);
 }
 .images5 {
-  filter: contrast(31%) hue-rotate(241deg) grayscale(73%) 
+  filter: contrast(31%) hue-rotate(241deg) grayscale(73%);
 }
 .arrowIcon {
   display: flex;
@@ -71,16 +70,16 @@
   animation: scrollTop 0.5s alternate ease infinite;
 }
 @keyframes scrollTop {
-  from{
+  from {
     transform: translateY(7px);
   }
-  to{
+  to {
     transform: translateY(-4px);
   }
 }
 .background1 {
-background-color: #92763A;
-margin-bottom: 5rem;
+  background-color: #92763a;
+  margin-bottom: 5rem;
 }
 @media screen and (max-width: 1200px) {
   .hero {
@@ -95,9 +94,8 @@ margin-bottom: 5rem;
   }
   .button {
     margin-top: 2rem;
-
   }
-  .hero_images{
+  .hero_images {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -108,50 +106,47 @@ margin-bottom: 5rem;
   .arrowIcon {
     margin-bottom: 4rem;
   }
-  .hero{
+  .hero {
     margin: 1rem;
   }
   .hero_images {
     margin-top: -2rem;
   }
-  .hero_images img{
-  width: 100px;
-  
+  .hero_images img {
+    width: 100px;
   }
 }
 @media screen and (max-width: 496px) {
   .arrowIcon {
     margin-bottom: 2rem;
-   
   }
-  
-  
-  .hero_images img{
+
+  .hero_images img {
     max-width: 40px;
     max-height: 100%;
     gap: 1rem;
-    }
-    .hero_info h1 {
-      color: white;
-      font-size: 48px;
-      font-weight: 700;
-    }
-    .hero_info p {
-      color: white;
-      font-size: 12px;
-      font-weight: 400;
-      margin-top: -1rem;
-    }
-    .button {
-      background: #824d48;
-      width: 8rem;
-      font-size: 24px;
-      font-weight: 700;
-      border: none;
-      border-radius: 4px;
-      padding: 0.5rem 2rem;
-      color: white;
-      text-decoration: none;
-      text-align: center;
-    }
+  }
+  .hero_info h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+  }
+  .hero_info p {
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: -1rem;
+  }
+  .button {
+    background: #824d48;
+    width: 8rem;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 2rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  }
 }

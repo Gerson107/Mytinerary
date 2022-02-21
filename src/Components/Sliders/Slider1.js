@@ -11,28 +11,20 @@ import "./styles.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
-import Datos from './datos'
+import Datos from "./datos";
 export default function App() {
-
   return (
     <>
       <div class="carousel">
-
         <div className="carousel_text">
           <h2> Popular MyTineraries</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
-
         </div>
         <Swiper
-
           slidesPerView={4}
-
           spaceBetween={30}
-
-
           loop={true}
           loopFillGroupWithBlank={true}
-
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
@@ -42,14 +34,15 @@ export default function App() {
           }}
           navigation={true}
           modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper" >
-
-          {Datos.map(evento =>
-
-            <SwiperSlide >
+          className="mySwiper"
+        >
+          {Datos.map((evento) => (
+            <SwiperSlide>
               <div className="swiper-slide">
                 <div className="img">
-                  <img src={process.env.PUBLIC_URL + `/imagenes/${evento.image}`} />
+                  <img
+                    src={process.env.PUBLIC_URL + `/imagenes/${evento.image}`}
+                  />
                   <div className="carousel_detail">
                     <h3>{evento.name}</h3>
                     <p>{evento.ciudad}</p>
@@ -57,17 +50,9 @@ export default function App() {
                 </div>
               </div>
             </SwiperSlide>
-            
-            
-
-
-          )}
-
-
+          ))}
         </Swiper>
-
       </div>
     </>
   );
 }
-
