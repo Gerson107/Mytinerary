@@ -23,22 +23,22 @@
   font-weight: 400;
   margin-top: -1rem;
 }
-.button {
+.boton {
   background: #824d48;
-  width: 8rem;
-  font-size: 24px;
+  width: 5rem;
+  font-size: 16px;
   font-weight: 700;
   border: none;
   border-radius: 4px;
-  padding: 0.5rem 2rem;
+  height: 2rem;
   color: white;
   text-decoration: none;
   text-align: center;
 }
-.button:hover {
+.boton:hover {
   background-color: white;
   color: #824d48;
-  border: solid #824d48;
+  border: 1px solid #824d48;
 }
 .hero_images {
   margin-top: 4rem;

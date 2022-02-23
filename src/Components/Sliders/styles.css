@@ -6,6 +6,7 @@
 }
 
 .swiper-slide {
+ 
   text-align: center;
   /* Center slide text vertically */
   display: -webkit-box;
@@ -38,7 +39,6 @@
 .carousel {
   display: flex;
   margin: 2rem;
-  height: 30rem;
   gap: 2rem;
 }
 .carousel_detail {
@@ -103,12 +103,7 @@
     margin: 0 auto;
   }
 }
-@media screen and (max-width: 1060px) {
-}
-@media screen and (max-width: 768px) {
-}
-@media screen and (max-width: 665px) {
-}
+
 @media screen and (max-width: 496px) {
   .carousel {
     display: flex;

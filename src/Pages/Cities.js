@@ -1,12 +1,13 @@
-import React  from 'react'
-import fondo from './proximo.jpg'
+import React  from 'react';
+import './Cities.css';
+import Card from '../Components/Card/Card'
 
 function Cities(){
     return (
-      <div>
-      <h1>Proximamente</h1>
-      <img src={fondo} alt="vacaciones"></img>
-      </div>
+      <>
+      <Card/>
+    
+      </>
     )
   }
 

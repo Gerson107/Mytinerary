@@ -27,7 +27,6 @@ export default function Hero() {
         <div className="hero_images">
           <img className="images1" src={cityone} alt="images1"></img>
           <img className="images2" src={citytwo} alt="images2"></img>
-
           <img className="images3" src={cityfour} alt="images3"></img>
           <img className="images4" src={cityfive} alt="images4"></img>
           <img className="images5" src={citysix} alt="images5"></img>
