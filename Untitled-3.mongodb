@@ -1,96 +1,136 @@
-{"datos":
-     [
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+const database = 'mytinerary';
+//const collection = 'NEW_COLLECTION_NAME';
+
+// The current database to use.
+use(database);
+
+// Create a new collection.
+db.cities.drop();
+
+db.cities.insertMany([
+
     {
-      "image":"vaticano.png",
+      "image":"",
       "name" : " Vaticano",
       "ciudad": " Vaticano",
       "description": "Ciudad-estado católica y hogar del Papa, con frescos en la Capilla Sixtina y la Basílica de San Pedro."
     },
     {
-      "image":"brazil.png",
+      "image":"",
       "name":"Brasil",
       "ciudad": "São Paulo",
       "description": "Metrópolis de Brasil con arquitectura moderna e histórica, el museo MASP y tiendas de moda en Jardins."   
     },
     {
-      "image":"turkey.png",
+      "image":"",
       "name":"Turkey",
       "ciudad": "Istanbul",
       "description": "Ciudad turca que conecta Europa y Asia, conocida por su arquitectura imperial bizantina y otomana."
         
     },
     {
-      "image":"china.png",
+      "image":"",
       "name":"China",
       "ciudad": "Beijing",
       "description": "País de Asia Oriental con palacios, templos, ciudades, como Pekín, Shanghái y la Gran Muralla China​"
     },
     {
-      "image":"france.png",
+      "image":"",
       "name":"France",
       "ciudad": "Paris",
       "description": "Capital de Francia, hogar de la Torre Eiffel, Louvre, Notre-Dame, cafés y alta costura."  
     },
     {
-      "image":"egypte.png",
+      "image":"",
       "name":"Egypt",
       "ciudad": "Cairo",
       "description": "Capital de Egipto con artefactos en el Museo Egipcio, las pirámides de Guiza y la Gran Esfinge."
     },
     {
-      "image":"oslo.png",
+      "image":"",
       "name":"Norway",
       "ciudad": "Oslo",
       "description": "Capital de Noruega, con museos en la Península de Bygdøy, áreas verdes y saltos en esquí en Holmenkollbakken."
     },
     { 
-      "image":"zhezhen.png",
+      "image":"",
       "name":"China",
       "ciudad": "Shenzhen",
       "description": "Moderna ciudad china con comercio, parques de atracciones, galerías de arte y el Museo de Shenzhen."
     },
     {
-      "image":"dubai.png",
+      "image":"",
       "name":"Arab E.",
       "ciudad": "Dubai",
       "description": "Ciudad del golfo con rascacielos como Burj Khalifa, centros comerciales y Atlantis, en islas artificiales"
     },
     {
-      "image":"sidney.png",
+      "image":"",
       "name":"Australia",
       "ciudad": "Sydney",
       "description": "Capital estatal de Nueva Gales del Sur famosa por la Casa de la Ópera de Sídney y el surf en Bondi Beach."
     },
     {
-      "image":"cartagena.png",
+      "image":"",
       "name":"Colombia",
       "ciudad": "Cartagena",
       "description": "Ciudad portuaria de Colombia con un castillo, la Ciudad Vieja amurallada, playas, islas del Rosario."
     },
     {
-      "image":"orlando.png",
+      "image":"",
       "name":"EE. UU",
       "ciudad": "Orlando",
       "description": "Ciudad central de Florida con decenas de parques temáticos, como Walt Disney World y Universal Studios."
     },
     {
-      "image":"medellin.png",
+      "image":"",
       "name":"Colombia",
       "ciudad": "Medellin",
       "description": "Ciudad colombiana con la Feria de las Flores anual, el Metrocable y el arte de Fernando Botero."
     },
     {
-      "image":"newyork.png",
+      "image":"",
       "name":"EE. UU",
       "ciudad": "Nueva York",
       "description": "Influyente metrópolis conocida por la Estatua de la Libertad, el Empire State Building y Times Square."
     },
     {
-      "image":"madrid.png",
+      "image":"",
       "name":"España",
       "ciudad": "Madrid",
       "description": "Capital de España con el Palacio Real e importantes museos de arte, como el Prado y Reina Sofía."
     }
-]
-   
-}
+]);
+// The prototype form to create a regular collection:
+/* db.createCollection( <name>,
+  {
+    capped: <boolean>,
+    autoIndexId: <boolean>,
+    size: <number>,
+    max: <number>,
+    storageEngine: <document>,
+    validator: <document>,
+    validationLevel: <string>,
+    validationAction: <string>,
+    indexOptionDefaults: <document>,
+    viewOn: <string>,
+    pipeline: <pipeline>,
+    collation: <document>,
+    writeConcern: <document>
+  }
+) */
+
+// The prototype form to create a time-series collection:
+/* db.createCollection( <name>,
+  {
+    timeseries: {
+      timeField: <string>,
+      metaField: <string>,
+      granularity: <string>
+    },
+    expireAfterSeconds: <number>
+  }
+) */
