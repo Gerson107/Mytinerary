@@ -3,7 +3,14 @@ import {Card, Button} from 'react-bootstrap'
 import imagen from './card.jpg'
 import './Card.css'
 
+
+
+
+
+
 export default function CardItem() {
+
+ 
   return (
  <div>
  <Card className="cards">

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -41,7 +41,7 @@ export default function App() {
               <div className="swiper-slide">
                 <div className="img">
                   <img
-                    src={process.env.PUBLIC_URL + `/imagenes/${evento.image}`}
+                    src={process.env.PUBLIC_URL + `/imagenes/${evento.image}`} 
                   />
                   <div className="carousel_detail">
                     <h3>{evento.name}</h3>

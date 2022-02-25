@@ -31,9 +31,9 @@ function Footer() {
       </div>
 
       <div class="footer_icon">
-        <img src={instagram}></img>
-        <img src={twitter}></img>
-        <img src={github}></img>
+        <img src={instagram} alt="instagram"></img>
+        <img src={twitter} alt="twitter"></img>
+        <img src={github} alt="github"></img>
       </div>
     </div>
   );
