@@ -101,6 +101,22 @@ label{
     color: #824d48;
     border: solid #824d48;
   }
+  .detalletitulo{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    
+  }
+  .detail{
+      height: 20rem;
+      margin: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .detail h2 {
+      font-size: 50px;
+  }
 @media screen and (max-width: 820px) {
     .cities{
         display: flex;

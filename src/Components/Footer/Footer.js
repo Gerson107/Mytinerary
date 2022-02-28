@@ -30,7 +30,7 @@ function Footer() {
         <p>© 2022 MyTinerary Inc. All rights reserved.</p>
       </div>
 
-      <div class="footer_icon">
+      <div className="footer_icon">
         <img src={instagram} alt="instagram"></img>
         <img src={twitter} alt="twitter"></img>
         <img src={github} alt="github"></img>

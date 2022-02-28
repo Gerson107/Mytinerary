@@ -15,7 +15,7 @@ import Datos from "./datos";
 export default function App() {
   return (
     <>
-      <div class="carousel">
+      <div className="carousel">
         <div className="carousel_text">
           <h2> Popular MyTineraries</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
