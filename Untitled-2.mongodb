@@ -16,92 +16,92 @@ db.cities.insertMany([
       "image":"vaticano.png",
       "name" : " Vaticano",
       "ciudad": " Vaticano",
-      "description": "Ciudad-estado católica y hogar del Papa, con frescos en la Capilla Sixtina y la Basílica de San Pedro."
+      "description": "Catholic city-state and home to the Pope, with frescoes in the Sistine Chapel and St. Peter's Basilica."
     },
     {
       "image":"brazil.png",
       "name":"Brasil",
       "ciudad": "São Paulo",
-      "description": "Metrópolis de Brasil con arquitectura moderna e histórica, el museo MASP y tiendas de moda en Jardins."   
+      "description": "Brazilian metropolis with modern and historical architecture, the MASP museum and trendy shops in Jardins."   
     },
     {
       "image":"turkey.png",
       "name":"Turkey",
       "ciudad": "Istanbul",
-      "description": "Ciudad turca que conecta Europa y Asia, conocida por su arquitectura imperial bizantina y otomana."
+      "description": "Turkish city connecting Europe and Asia, known for its Byzantine and Ottoman imperial architecture."
         
     },
     {
       "image":"china.png",
       "name":"China",
       "ciudad": "Beijing",
-      "description": "País de Asia Oriental con palacios, templos, ciudades, como Pekín, Shanghái y la Gran Muralla China​"
+      "description": "East Asian country with palaces, temples, cities, such as Beijing, Shanghai and the Great Wall of China​"
     },
     {
       "image":"france.png",
       "name":"France",
       "ciudad": "Paris",
-      "description": "Capital de Francia, hogar de la Torre Eiffel, Louvre, Notre-Dame, cafés y alta costura."  
+      "description": "Capital of France, home to the Eiffel Tower, Louvre, Notre-Dame, cafes, and haute couture."  
     },
     {
       "image":"egypte.png",
       "name":"Egypt",
       "ciudad": "Cairo",
-      "description": "Capital de Egipto con artefactos en el Museo Egipcio, las pirámides de Guiza y la Gran Esfinge."
+      "description": "Capital of Egypt with artifacts in the Egyptian Museum, the Pyramids of Giza and the Great Sphinx."
     },
     {
       "image":"oslo.png",
       "name":"Norway",
       "ciudad": "Oslo",
-      "description": "Capital de Noruega, con museos en la Península de Bygdøy, áreas verdes y saltos en esquí en Holmenkollbakken."
+      "description": "Capital of Norway, with museums on the Bygdøy Peninsula, green areas and ski jumps in Holmenkollbakken."
     },
     { 
       "image":"zhezhen.png",
       "name":"China",
       "ciudad": "Shenzhen",
-      "description": "Moderna ciudad china con comercio, parques de atracciones, galerías de arte y el Museo de Shenzhen."
+      "description": "Modern Chinese city with commerce, amusement parks, art galleries and the Shenzhen Museum."
     },
     {
       "image":"dubai.png",
       "name":"Arab E.",
       "ciudad": "Dubai",
-      "description": "Ciudad del golfo con rascacielos como Burj Khalifa, centros comerciales y Atlantis, en islas artificiales"
+      "description": "Gulf city with skyscrapers like Burj Khalifa, shopping malls and Atlantis, on artificial islands."
     },
     {
       "image":"sidney.png",
       "name":"Australia",
       "ciudad": "Sydney",
-      "description": "Capital estatal de Nueva Gales del Sur famosa por la Casa de la Ópera de Sídney y el surf en Bondi Beach."
+      "description": "State capital of New South Wales famous for the Sydney Opera House and surfing at Bondi Beach."
     },
     {
       "image":"cartagena.png",
       "name":"Colombia",
       "ciudad": "Cartagena",
-      "description": "Ciudad portuaria de Colombia con un castillo, la Ciudad Vieja amurallada, playas, islas del Rosario."
+      "description": "Colombian port city with a castle, the walled Old City, beaches, Rosario Islands."
     },
     {
       "image":"orlando.png",
       "name":"EE. UU",
       "ciudad": "Orlando",
-      "description": "Ciudad central de Florida con decenas de parques temáticos, como Walt Disney World y Universal Studios."
+      "description": "Central Florida city with dozens of theme parks, including Walt Disney World and Universal Studios."
     },
     {
       "image":"medellin.png",
       "name":"Colombia",
       "ciudad": "Medellin",
-      "description": "Ciudad colombiana con la Feria de las Flores anual, el Metrocable y el arte de Fernando Botero."
+      "description": "Colombian city with the annual Flower Fair, the Metrocable and the art of Fernando Botero."
     },
     {
       "image":"newyork.png",
       "name":"EE. UU",
       "ciudad": "Nueva York",
-      "description": "Influyente metrópolis conocida por la Estatua de la Libertad, el Empire State Building y Times Square."
+      "description": "Influential metropolis known for the Statue of Liberty, the Empire State Building and Times Square."
     },
     {
       "image":"madrid.png",
       "name":"España",
       "ciudad": "Madrid",
-      "description": "Capital de España con el Palacio Real e importantes museos de arte, como el Prado y Reina Sofía."
+      "description": "Capital of Spain with the Royal Palace and important art museums, such as the Prado and Reina Sofía."
     }
 ]);
 // The prototype form to create a regular collection:

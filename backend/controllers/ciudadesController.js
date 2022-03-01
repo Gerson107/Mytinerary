@@ -8,6 +8,7 @@ const ciudadesController = {
 
         try{
             cities = await Ciudades.find()
+           
         }catch(err){
             error = err
             console.log(error)
@@ -17,7 +18,31 @@ const ciudadesController = {
             success: error ? false : true,
             error: error
         })
+    },
+
+
+    createCities: async(req, res)=> {
+        const {name, ciudad, description, image} = req.body.dataInput
+        new Ciudades({name: name,
+            ciudad: ciudad,
+                description: description,
+                image:image     
+            }).save()
+                .then((respuesta)=> res.json({respuesta}))
+        },
+
+    deleteCities: async(req, res)=> {
+        const id = req.params.id
+
+        await Ciudades.findOneAndDelete({_id:id})
+    },
+    updateCities: async(req, res)=> {
+        const id = req.params.id
+        const ciudad = req.body.dataInput
+
+        let ciudaddb = await Ciudades.findOneAndUpdate({_id:id}, ciudad)
     }
+    
 
 }
 module.exports = ciudadesController

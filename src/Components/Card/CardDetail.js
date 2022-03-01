@@ -19,7 +19,8 @@ function CardDetail() {
  
     {data?.map(city =>
         <div className='detail'>
-              <h1 className='detalletitulo'>Bienvenido a la ciudad de:  {city.ciudad}</h1>
+              <h1 className='detalletitulo'>Welcome to the city of:  {city.ciudad}</h1>
+              <img  src={process.env.PUBLIC_URL + `/imagenes/${city.image}`}></img>
               <p>---our new website---</p>
              <h2> UNDER CONSTRUCTION</h2>
              <LinkRouter to="/cities" className="link">
