@@ -22,11 +22,12 @@ const ciudadesController = {
 
 
     createCities: async(req, res)=> {
-        const {name, ciudad, description, image} = req.body.dataInput
-        new Ciudades({name: name,
+        const { image, name, ciudad, description} = req.body.input
+        new Ciudades({
+            image: image,
+            name: name,
             ciudad: ciudad,
-                description: description,
-                image:image     
+                description: description,              
             }).save()
                 .then((respuesta)=> res.json({respuesta}))
         },
