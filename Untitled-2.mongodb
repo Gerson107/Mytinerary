@@ -16,92 +16,166 @@ db.cities.insertMany([
       "image":"vaticano.png",
       "name" : " Vaticano",
       "ciudad": " Vaticano",
-      "description": "Catholic city-state and home to the Pope, with frescoes in the Sistine Chapel and St. Peter's Basilica."
+      "description": "Catholic city-state and home to the Pope, with frescoes in the Sistine Chapel and St. Peter's Basilica.",
+      "flag":"vaticanoflag.png",
+      "lenguage":"Italiano, Latin",
+      "hotels":"86",
+      "restaurants":"50",
+      "hospitals":"3"
     },
     {
       "image":"brazil.png",
       "name":"Brasil",
       "ciudad": "São Paulo",
-      "description": "Brazilian metropolis with modern and historical architecture, the MASP museum and trendy shops in Jardins."   
+      "description": "Brazilian metropolis with modern and historical architecture, the MASP museum and trendy shops in Jardins.",
+      "flag":"blazilflag.png",
+      "lenguage":"Portugues",
+      "hotels":"1.693",
+      "restaurants":"572",
+      "hospitals":"40"  
     },
     {
       "image":"turkey.png",
       "name":"Turkey",
       "ciudad": "Istanbul",
-      "description": "Turkish city connecting Europe and Asia, known for its Byzantine and Ottoman imperial architecture."
-        
+      "description": "Turkish city connecting Europe and Asia, known for its Byzantine and Ottoman imperial architecture.",
+      "flag":"turkeyflag.png",
+      "lenguage":"Turco, English",
+      "hotels":"4.060",
+      "restaurants":"2.600",
+      "hospitals":"120" 
     },
     {
       "image":"china.png",
       "name":"China",
       "ciudad": "Beijing",
-      "description": "East Asian country with palaces, temples, cities, such as Beijing, Shanghai and the Great Wall of China​"
+      "description": "East Asian country with palaces, temples, cities, such as Beijing, Shanghai and the Great Wall of China​",
+      "flag":"chinaflag.png",
+      "lenguage":"Mandarin",
+      "hotels":"10.417",
+      "restaurants":"5.460",
+      "hospitals":"560"
     },
     {
       "image":"france.png",
       "name":"France",
       "ciudad": "Paris",
-      "description": "Capital of France, home to the Eiffel Tower, Louvre, Notre-Dame, cafes, and haute couture."  
+      "description": "Capital of France, home to the Eiffel Tower, Louvre, Notre-Dame, cafes, and haute couture.",
+      "flag":"fanceflag.png",
+      "lenguage":"Frances, English",
+      "hotels":"2.857",
+      "restaurants":"930",
+      "hospitals":"120"
     },
     {
       "image":"egypte.png",
       "name":"Egypt",
       "ciudad": "Cairo",
-      "description": "Capital of Egypt with artifacts in the Egyptian Museum, the Pyramids of Giza and the Great Sphinx."
+      "description": "Capital of Egypt with artifacts in the Egyptian Museum, the Pyramids of Giza and the Great Sphinx.",
+      "flag":"egypteflag.png",
+      "lenguage":"Arabe",
+      "hotels":"1.238",
+      "restaurants":"500",
+      "hospitals":"120"
     },
     {
       "image":"oslo.png",
       "name":"Norway",
       "ciudad": "Oslo",
-      "description": "Capital of Norway, with museums on the Bygdøy Peninsula, green areas and ski jumps in Holmenkollbakken."
+      "description": "Capital of Norway, with museums on the Bygdøy Peninsula, green areas and ski jumps in Holmenkollbakken.",
+      "flag":"osloflag.png",
+      "lenguage":"Noruego, English",
+      "hotels":"156",
+      "restaurants":"70",
+      "hospitals":"30"
     },
     { 
       "image":"zhezhen.png",
       "name":"China",
       "ciudad": "Shenzhen",
-      "description": "Modern Chinese city with commerce, amusement parks, art galleries and the Shenzhen Museum."
+      "description": "Modern Chinese city with commerce, amusement parks, art galleries and the Shenzhen Museum.",
+      "flag":"zhezhenflag.png",
+      "lenguage":"Mandarin",
+      "hotels":"7.609",
+      "restaurants":"5.430",
+      "hospitals":"1.400"
     },
     {
       "image":"dubai.png",
       "name":"Arab E.",
       "ciudad": "Dubai",
-      "description": "Gulf city with skyscrapers like Burj Khalifa, shopping malls and Atlantis, on artificial islands."
+      "description": "Gulf city with skyscrapers like Burj Khalifa, shopping malls and Atlantis, on artificial islands.",
+      "flag":"dubaiflag.png",
+      "lenguage":"English",
+      "hotels":"1.686",
+      "restaurants":"1.140",
+      "hospitals":"300"
     },
     {
       "image":"sidney.png",
       "name":"Australia",
       "ciudad": "Sydney",
-      "description": "State capital of New South Wales famous for the Sydney Opera House and surfing at Bondi Beach."
+      "description": "State capital of New South Wales famous for the Sydney Opera House and surfing at Bondi Beach.",
+      "flag":"sidneyflag.png",
+      "lenguage":"English",
+      "hotels":"996",
+      "restaurants":"436",
+      "hospitals":"89"
     },
     {
       "image":"cartagena.png",
       "name":"Colombia",
       "ciudad": "Cartagena",
-      "description": "Colombian port city with a castle, the walled Old City, beaches, Rosario Islands."
+      "description": "Colombian port city with a castle, the walled Old City, beaches, Rosario Islands.",
+      "flag":"cartagenaflag.png",
+      "lenguage":"Spanish",
+      "hotels":"886",
+      "restaurants":"570",
+      "hospitals":"70"
     },
     {
       "image":"orlando.png",
       "name":"EE. UU",
       "ciudad": "Orlando",
-      "description": "Central Florida city with dozens of theme parks, including Walt Disney World and Universal Studios."
+      "description": "Central Florida city with dozens of theme parks, including Walt Disney World and Universal Studios.",
+      "flag":"orlandoflag.png",
+      "lenguage":"English",
+      "hotels":"270",
+      "restaurants":"89",
+      "hospitals":"40"
     },
     {
       "image":"medellin.png",
       "name":"Colombia",
       "ciudad": "Medellin",
-      "description": "Colombian city with the annual Flower Fair, the Metrocable and the art of Fernando Botero."
+      "description": "Colombian city with the annual Flower Fair, the Metrocable and the art of Fernando Botero.",
+      "flag":"medellinflag.png",
+      "lenguage":"Spanish",
+      "hotels":"800",
+      "restaurants":"640",
+      "hospitals":"97"
     },
     {
       "image":"newyork.png",
       "name":"EE. UU",
       "ciudad": "Nueva York",
-      "description": "Influential metropolis known for the Statue of Liberty, the Empire State Building and Times Square."
-    },
+      "description": "Influential metropolis known for the Statue of Liberty, the Empire State Building and Times Square.",
+      "flag":"newyorkflag.png",
+      "lenguage":"English",
+      "hotels":"1.222",
+      "restaurants":"950",
+      "hospitals":"120"
+      },
     {
       "image":"madrid.png",
       "name":"España",
       "ciudad": "Madrid",
-      "description": "Capital of Spain with the Royal Palace and important art museums, such as the Prado and Reina Sofía."
+      "description": "Capital of Spain with the Royal Palace and important art museums, such as the Prado and Reina Sofía.",
+      "flag":"madridflag.png",
+      "lenguage":"Spanish",
+      "hotels":"1.686",
+      "restaurants":"1.140",
+      "hospitals":"300"
     }
 ]);
 // The prototype form to create a regular collection:

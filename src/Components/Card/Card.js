@@ -1,44 +1,58 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Card, Button } from "react-bootstrap";
-import axios from "axios";
+//import axios from "axios";
 import { Link as LinkRouter } from "react-router-dom";
 import "./Card.css";
+import citiesActions from '../../redux/actions/citiesActions';
+import { connect } from 'react-redux';
 
-function Cards() {
-  const [data, setData] = useState();
-  const [city, setCity] = useState();
-  const [searchResult, setSearchResult] = useState();
-  const [isLoad, setIsload] = useState(false);
+class Cards extends React.Component{
+  // const [data, setData] = useState();
+  // const [city, setCity] = useState();
+  // const [searchResult, setSearchResult] = useState();
+  // const [isLoad, setIsload] = useState(false);
 
-  useEffect(() => {
-    axios.get(`http://localhost:4000/api/v1/allcities`).then((respuesta) => {
-      setData(respuesta.data.response.cities);
-      setCity(respuesta.data.response.cities);
-      setIsload(true);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.get(`http://localhost:4000/api/v1/allcities`).then((respuesta) => {
+  //     setData(respuesta.data.response.cities);
+  //     setCity(respuesta.data.response.cities);
+  //     setIsload(true);
+  //   });
+  // }, []);
 
-  useEffect(() => {
-    if (searchResult !== undefined) {
-      setCity(searchResult);
+  // useEffect(() => {
+  //   if (searchResult !== undefined) {
+  //     setCity(searchResult);
+  //   }
+  // }, [searchResult]);
+
+  // const handleChange = (e) => {
+  //   filters(e.target.value);
+  // };
+
+  // const filters = (search) => {
+  //   console.log(search);
+  //   console.log(data);
+  //   setSearchResult(
+  //     data.filter((data) =>
+  //       data.name.toLowerCase().startsWith(search.toLowerCase().trim())
+  //     )
+  //   );
+  // };
+  state = {
+    arrayCities: []
+  }
+  componentDidMount() {
+    console.log('estoy en componentdidmount')
+    if(this.props.cities.length < 1) {
+      this.props.fetchearCities()
+      console.log('hice el pedido')
     }
-  }, [searchResult]);
+  }
 
-  const handleChange = (e) => {
-    filters(e.target.value);
-  };
-
-  const filters = (search) => {
-    console.log(search);
-    console.log(data);
-    setSearchResult(
-      data.filter((data) =>
-        data.name.toLowerCase().startsWith(search.toLowerCase().trim())
-      )
-    );
-  };
-
-  return (
+  render() {
+    console.log(this.props)
+    return (
     <>
       <div className="cities">
         <div className="cities_search">
@@ -50,7 +64,7 @@ function Cards() {
               id="name"
               placeholder="Nombre de pais"
               name="user_name"
-              onChange={handleChange}
+             // onChange={handleChange}
             />
 
             <label for="mail">Buscar por ciudad:</label>
@@ -64,13 +78,9 @@ function Cards() {
         </div>
 
         <div className="cities_card">
-          {!isLoad ? (
-            <h2 className="loading">Loading... Waiting Please</h2>
-          ) : city.length === 0 ? (
-            <h2 className="loading">City ​​not found</h2>
-          ) : (
-            city?.map((city) => (
-              <Card className="cards">
+         
+           {this.props.cities && this.props.cities.map((city) => (
+              <Card className="cards" key={city._id}>
                 <Card.Img
                   className="imgn"
                   variant="top"
@@ -88,12 +98,20 @@ function Cards() {
                   </LinkRouter>
                 </Card.Body>
               </Card>
-            ))
-          )}
+           ))}
+        
         </div>
       </div>
-    </>
-  );
+    </> );
+   }
 }
-
-export default Cards;
+const mapDispatchToProps = {
+  fetchearCities: citiesActions.fetchearCities,
+}
+const mapStateToProps = (state) => {
+  return {
+    cities: state.Data.cities,
+    auxiliar: state.Data.auxiliar,
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Cards);

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './Card.css';
 import { Link as LinkRouter } from "react-router-dom";
+
 function CardDetail() {
     const [data, setData] = useState();
     let {id} = useParams()
@@ -20,6 +21,9 @@ function CardDetail() {
     {data?.map(city =>
         <div className='detail'>
               <h1 className='detalletitulo'>Welcome to the city of:  {city.ciudad}</h1>
+              <p>Restaurantes: {city.restaurants}</p>
+              <p>Hoteles: {city.hotels}</p>
+              <p>Lenguages: {city.lenguage}</p>
               <img  src={process.env.PUBLIC_URL + `/imagenes/${city.image}`}></img>
               <p>---our new website---</p>
              <h2> UNDER CONSTRUCTION</h2>
@@ -38,5 +42,6 @@ function CardDetail() {
     </>
  )
  }
+
 
 export default CardDetail

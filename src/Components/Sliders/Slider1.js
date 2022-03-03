@@ -37,6 +37,7 @@ export default function App() {
           className="mySwiper"
         >
           {Datos.map((evento) => (
+            
             <SwiperSlide>
               <div className="swiper-slide">
                 <div className="img">
