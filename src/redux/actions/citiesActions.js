@@ -8,7 +8,12 @@ const citesActions = {
             dispatch({type:'fetch', payload:res.data.response.cities})
         }
     },
-
+    fetchearOneCities: (id) => {
+        return async(dispatch, getState) => {
+            const res = await axios.get('http://localhost:4000/api/v1/allcities/'+id)
+            dispatch({type: 'fetchOne', payload:res.data.response.cities })
+        }
+    },
     deleteCities: (id)=>{
         return async(dispatch, getState)=>{
             try {
@@ -19,9 +24,9 @@ const citesActions = {
             }
         }
     },
-    filter: (productos, value)=>{
+    filter: (cities, value)=>{
         return (dispatch, getState)=>{
-            dispatch({type:'filtro', payload:{productos, value}})
+            dispatch({type:'filtro', payload:{cities, value}})
         }
     },
     chargeCities: (name, ciudad)=>{

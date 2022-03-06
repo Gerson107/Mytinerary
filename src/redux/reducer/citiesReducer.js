@@ -15,6 +15,12 @@ const citiesReducer = (state = initialState, action)=>{
                 cities: action.payload,
                 auxiliar: action.payload,
             }
+        case 'fetchOne':
+            return {
+                ...state,
+                cities: action.payload,
+                auxiliar: action.payload
+            }
         case 'delete':
             return {
                 ...state,

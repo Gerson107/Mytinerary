@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 import Cities from "./Pages/Cities";
 import Header from "./Components/Nabvar/Header";
 import Footer from "./Components/Footer/Footer";
-import Detalle from "./Components/Card/CardDetail"
+import Detalle from "./Components/cardDetail/CardDetail"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {

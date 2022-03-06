@@ -5,6 +5,7 @@ import { Link as LinkRouter } from "react-router-dom";
 import "./Card.css";
 import citiesActions from '../../redux/actions/citiesActions';
 import { connect } from 'react-redux';
+import Filter from '../filter/filter'
 
 class Cards extends React.Component{
   // const [data, setData] = useState();
@@ -57,29 +58,13 @@ class Cards extends React.Component{
       <div className="cities">
         <div className="cities_search">
           <h1>The most visited places in the world</h1>
-          <form className="form">
-            <label for="name">Buscar por pais:</label>
-            <input
-              type="text"
-              id="name"
-              placeholder="Nombre de pais"
-              name="user_name"
-             // onChange={handleChange}
-            />
-
-            <label for="mail">Buscar por ciudad:</label>
-            <input
-              type="email"
-              id="mail"
-              placeholder="Nombre de ciudad"
-              name="user_email"
-            />
-          </form>
+          <Filter filter={this.props.filter} cities={this.props.auxiliar}/>
         </div>
 
         <div className="cities_card">
          
-           {this.props.cities && this.props.cities.map((city) => (
+           {this.props.cities.length === 0 ? (<h1> City no fund</h1>) :
+             this.props.cities && this.props.cities.map((city) => (
               <Card className="cards" key={city._id}>
                 <Card.Img
                   className="imgn"
@@ -107,6 +92,8 @@ class Cards extends React.Component{
 }
 const mapDispatchToProps = {
   fetchearCities: citiesActions.fetchearCities,
+  filter: citiesActions.filter,
+
 }
 const mapStateToProps = (state) => {
   return {
