@@ -1,0 +1,22 @@
+.detalletitulo{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    
+  }
+  .hero0{
+      height: 40rem;
+      margin: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+  }
+  .hero0 h2 {
+      font-size: 50px;
+      
+  }
+  .loading{
+    
+      color: white;
+  }
