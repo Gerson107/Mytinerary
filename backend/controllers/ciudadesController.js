@@ -8,7 +8,7 @@ const ciudadesController = {
 
         try{
             cities = await Ciudades.find()
-           
+            .populate('Itinerarios')
         }catch(err){
             error = err
             console.log(error)
@@ -27,11 +27,12 @@ const ciudadesController = {
 
         try{
             city = await Ciudades.findOne({_id:id})
+            .populate('Itinerarios')
         }catch(err){
             error = err
         }
         res.json({
-            response: error ? 'ERROR' : ciudad,
+            response: error ? 'ERROR' : city,
             succes: error ? false : true,
         })
     },

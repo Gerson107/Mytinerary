@@ -8,10 +8,10 @@ const citesActions = {
             dispatch({type:'fetch', payload:res.data.response.cities})
         }
     },
-    fetchearOneCities: (id) => {
+    fetchearOneCity: (id) => {
         return async(dispatch, getState) => {
             const res = await axios.get('http://localhost:4000/api/v1/allcities/'+id)
-            dispatch({type: 'fetchOne', payload:res.data.response.cities })
+            return(res.data.response)
         }
     },
     deleteCities: (id)=>{

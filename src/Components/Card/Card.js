@@ -40,19 +40,22 @@ class Cards extends React.Component{
   //     )
   //   );
   // };
+  
   state = {
     arrayCities: []
   }
-  componentDidMount() {
+  componentDidMount() { 
+    
     console.log('estoy en componentdidmount')
     if(this.props.cities.length < 1) {
       this.props.fetchearCities()
       console.log('hice el pedido')
     }
   }
-
+ 
   render() {
     console.log(this.props)
+
     return (
     <>
       <div className="cities">
