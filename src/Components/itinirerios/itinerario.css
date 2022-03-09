@@ -1,0 +1,37 @@
+.itinerarioscard{
+ 
+
+}
+.carstyle{
+    margin-top: 2rem;
+    margin: 2rem;
+    background-color: #28352e!important;
+    
+}
+.MuiCardHeader-title{
+    font-size: 40px!important;
+    font-weight: bold!important;
+}
+.MuiCardHeader-content span{
+    color: rgb(255, 255, 255)!important;
+}
+
+.cardheader  {
+      color: rgb(255, 255, 255)!important;
+      
+}
+.time{
+    color: white;
+    margin-bottom: 1rem!important;
+}
+.imagenIti{
+    box-shadow: 2px 1px 4px 4px rgba(146, 146, 146, 0.685);
+}
+.MuiCardActions-root button{
+    color: white;
+}
+
+.avatar{
+   height: 3rem!important;
+   width:  3rem!important;
+}

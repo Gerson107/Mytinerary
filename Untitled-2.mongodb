@@ -22,7 +22,7 @@ db.cities.insertMany([
       "hotels":"86",
       "restaurants":"50",
       "hospitals":"3",
-      "Itinerarios": ["622428b0ae6a5d5a3bd2fb25","622428b0ae6a5d5a3bd2fb26"]
+      "Itinerarios": ["6228b4b1ff6926431d4a06d2","6228b4b1ff6926431d4a06d3"]
     },
     {
       "image":"brazil.png",
@@ -34,7 +34,7 @@ db.cities.insertMany([
       "hotels":"1.693",
       "restaurants":"572",
       "hospitals":"40",  
-      "Itinerarios":["622428b0ae6a5d5a3bd2fb27", "622428b0ae6a5d5a3bd2fb28"]
+      "Itinerarios":["6228b4b1ff6926431d4a06d4", "6228b4b1ff6926431d4a06d5"]
     },
     {
       "image":"turkey.png",

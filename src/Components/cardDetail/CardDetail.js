@@ -49,7 +49,8 @@ if(!data.element){
             <img src={process.env.PUBLIC_URL + `/imagenes/${data.element.image}`}></img>
           </div>
         </div>
-<Itinerario/>
+<Itinerario data={data}/>
+
     </>
   );
 }
