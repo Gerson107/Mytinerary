@@ -32,7 +32,7 @@ if(!data.element){
             </div>
             <div className="detail_datos">
             <div>
-             <p><b>Ciudad: </b>{data.element.ciudad}</p>
+             <p><b>Ci: </b>{data.element.ciudad}</p>
               <p><b>Hoteles:</b> {data.element.hotels}</p>
               <p><b>Restaurants:</b> {data.element.restaurants}</p>
             </div>
@@ -46,9 +46,10 @@ if(!data.element){
           </div>
 
           <div className="img_city">
-            <img src={process.env.PUBLIC_URL + `/imagenes/${data.element.image}`}></img>
+            <img className="imagcity" src={process.env.PUBLIC_URL + `/imagenes/${data.element.image}`}></img>
           </div>
         </div>
+        <h2>Itinerarios</h2>
 <Itinerario data={data}/>
 
     </>

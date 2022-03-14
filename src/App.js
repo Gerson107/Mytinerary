@@ -6,7 +6,10 @@ import Cities from "./Pages/Cities";
 import Header from "./Components/Nabvar/Header";
 import Footer from "./Components/Footer/Footer";
 import Detalle from "./Components/cardDetail/CardDetail"
+import Signup from "./Components/sign-in/SignUp"
+import Signin from './Components/sign-up/SignIn';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
@@ -17,6 +20,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/cities" element={<Cities />} />
           <Route path="/detalle/:id" element={<Detalle/>}/>
+          <Route path="/signin" element={<Signin/>}/>
+          <Route path="/signup" element={<Signup/>}/>
           <Route path="*" element={<Home />} />
         </Routes>
         <Footer />

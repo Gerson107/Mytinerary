@@ -51,6 +51,7 @@ const ItinerariosController = {
 
         await Itinerarios.findOneAndDelete({_id:id})
     },
+    
     updateItinerarios: async(req, res)=> {
         const id = req.params.id
         const itinerarios= req.body.dataInput

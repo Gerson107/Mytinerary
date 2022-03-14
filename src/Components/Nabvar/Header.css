@@ -8,6 +8,9 @@
   width: 55%;
   justify-content: space-between;
 }
+.header_div img{
+ width: 10rem;
+}
 .nav {
   display: flex;
   flex-direction: row;
@@ -21,6 +24,14 @@
   font-weight: 500;
   font-size: 18px;
   color: white;
+}
+
+.logouser{
+border: none!important;
+color: white!important;
+}
+.MuiOutlinedInput-root{
+  color: white!important;
 }
 @media screen and (max-width: 1060px) {
   .header_div {
