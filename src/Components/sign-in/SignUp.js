@@ -39,6 +39,22 @@ const currencies = [
     value: "Venezuela",
     label: "Venezuela",
   },
+  {
+    value: "Peru",
+    label: "Peru",
+  },
+  {
+    value: "Bolivia",
+    label: "Bolivia",
+  },
+  {
+    value: "Ecuador",
+    label: "Ecuador",
+  },
+  {
+    value: "Uruguay",
+    label: "Uruguay",
+  },
 ];
 
 function SignUp(props) {
@@ -57,18 +73,9 @@ function SignUp(props) {
     }
     formup.reset()
     props.signUpUser(userData) 
-   
-    console.log(userData)
-    console.log(props.message.success)
-  }
-  if(props.message) {
-    Swal.fire({
-      title: props.message,
-      text: 'Do you want to continue',
-      confirmButtonText: 'Cool'
-      })
-  }
+   console.log(userData)
  
+  }
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
@@ -81,7 +88,7 @@ function SignUp(props) {
     weightRange: "",
     showPassword: false,
   });
-  const [currency, setCurrency] = React.useState("EUR");
+  const [currency, setCurrency] = React.useState("");
   const handleChangee = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
@@ -132,21 +139,18 @@ function SignUp(props) {
           <div className="linee"></div>
           <TextField
             helperText="Please enter your name"
-            id="demo-helper-text-aligned"
             label="Full Name"
             name="fullName"
             type="text"
           />
           <TextField
             helperText="Plase enter your Last Name"
-            id="demo-helper-text-aligned-no-helper"
             label="lastName"
             name="lastName"
             type="text"
           />
           <TextField
             helperText="Plase enter your E-mail"
-            id="demo-helper-text-aligned-no-helper"
             label="E-mail"
             name="email"
             type="email"
@@ -178,7 +182,6 @@ function SignUp(props) {
               value={values.password}
               name="password"
               onChange={handleChangee("password")}
-              helperText="Please write your password"
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
@@ -196,7 +199,7 @@ function SignUp(props) {
           </FormControl>
           <TextField
             helperText="Plase enter your image"
-            id="demo-helper-text-aligned-no-helper"
+           
             label="profile"
             name="profile"
             type="text"
@@ -220,9 +223,5 @@ function SignUp(props) {
 const mapDispatchToProps ={
   signUpUser: userActions.signUpUser,
 }
-const mapStateToProps = (state) => {
-  return {
-    message: state.UserReducer.message,
-  }
-}
-export default connect(mapStateToProps, mapDispatchToProps) (SignUp);
+
+export default connect(null, mapDispatchToProps) (SignUp);

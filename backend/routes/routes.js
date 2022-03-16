@@ -1,17 +1,21 @@
-const Router = require('express').Router()
+const Router = require('express').Router();
+const validator = require('../config/validator');
 
 const { getitinerios, getOneItinerario, deleteItinerarios, updateItinerarios, createItinerarios } = require('../controllers/itinerariosControllers')
 const {getCities, getOneCity, createCities,  deleteCities,  updateCities} = require('../controllers/ciudadesController')
-const {signUpUsers, signInUser, signOutUser} = require('../controllers/userControllers')
+const {signUpUsers, signInUser, signOutUser, verifyEmail} = require('../controllers/userControllers')
 
 Router.route('/auth/signUp')
-.post(signUpUsers)
+.post(validator, signUpUsers)
 
 Router.route('/auth/signIn')
 .post(signInUser)
 
 Router.route('/auth/signOut')
 .post(signOutUser)
+
+Router.route('/verify/:uniqueString')
+.get(verifyEmail)
 
 Router.route('/allitinerarios')
 .get(getitinerios)

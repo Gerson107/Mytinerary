@@ -1,4 +1,5 @@
 import React from "react";
+import Swal from 'sweetalert2';
 import { Link as LinkRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import userActions from '../../redux/actions/userActions';
@@ -28,13 +29,8 @@ function SignIn(props) {
     formin.reset()
     props.signInUser(logedUser)
     console.log(logedUser)
-  
-      //alert(props.message)
-      
-   
   }
 
-  
   const [values, setValues] = React.useState({
     amount: "",
     password: "",
@@ -55,7 +51,7 @@ function SignIn(props) {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-  const [name, setName] = React.useState();
+  const [name, setName] = React.useState("");
   const handleChange = (event) => {
   setName(event.target.value);
    };
@@ -132,7 +128,7 @@ const mapDispatchToProps = {
 }
 const mapStateToProps = (state) => {
   return {
-    message: state.UserReducer.message,
+   // message: state.UserReducer.message,
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps) (SignIn);
