@@ -27,10 +27,7 @@
 .footer_icon img {
   margin-right: 2rem;
 }
-@media screen and (max-width: 880px) {
-  .footer_icon img {
-    margin-right: 0;
-  }
+ 
   /* .Footer_column{
         display: flex;
         flex-direction: column;
@@ -41,4 +38,4 @@
     padding: 1rem;
     display: flex;
   }
-}
+

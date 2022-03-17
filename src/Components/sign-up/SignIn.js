@@ -13,6 +13,8 @@ import IconButton from "@mui/material/IconButton";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import FingerprintTwoToneIcon from "@mui/icons-material/FingerprintTwoTone";
+import FacebookSignIn from '../facebookUser/FacebookSignIn';
+import GoogleSignIn from '../googleUser/GoogleSignIn';
 import "./signup.css";
 
 
@@ -24,7 +26,7 @@ function SignIn(props) {
     const logedUser = {
       email: event.target[0].value,
       password: event.target[2].value,
-      from: "form-Signin"
+      from: "form-Signup"
     }
     formin.reset()
     props.signInUser(logedUser)
@@ -67,6 +69,7 @@ function SignIn(props) {
           </button>
         </LinkRouter>
       </div>
+
       <Box 
        onSubmit={handleSubmit} id='formin'
         className="boxform"
@@ -81,7 +84,8 @@ function SignIn(props) {
           <h2>Sign in</h2>
           <FingerprintTwoToneIcon sx={{ fontSize: 50 }} />
         </div>
-
+        <GoogleSignIn/>
+        <FacebookSignIn/>
         <TextField
           id="outlined-name"
           label="name"

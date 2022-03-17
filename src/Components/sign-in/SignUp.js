@@ -14,15 +14,18 @@ import IconButton from "@mui/material/IconButton";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
-import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GoogleSignUp from "../googleUser/GoogleSignUp";
+import FacebookSignUp from '../facebookUser/FacebookSignUp'
 import "./signin.css";
 
-//const Swal = require('sweetalert2');
+
 
 
 const currencies = [
+  {
+    value: "unselected",
+    label: "unselected",
+  },
   {
     value: "Colombia",
     label: "Colombia",
@@ -63,18 +66,17 @@ function SignUp(props) {
     event.preventDefault()
     let formup = document.getElementById('formup')
     const userData={
-      fullName: event.target[0].value,
-      lastName: event.target[2].value,
-      email: event.target[4].value,
-      country: event.target[6].value,
-      password: event.target[8].value,
-      profile: event.target[11].value,
+      fullName: event.target[4].value, 
+      lastName: event.target[6].value,
+      email: event.target[8].value,
+      country: event.target[0].value, 
+      password: event.target[10].value,
+      profile: event.target[12].value,
       from:'form-Signup'
     }
     formup.reset()
     props.signUpUser(userData) 
-   console.log(userData)
- 
+  
   }
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -88,10 +90,11 @@ function SignUp(props) {
     weightRange: "",
     showPassword: false,
   });
-  const [currency, setCurrency] = React.useState("");
+  const [currency, setCurrency] = React.useState("unselected");
   const handleChangee = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
+  console.log(currency)
   const handleChange = (event) => {
     setCurrency(event.target.value);
   };
@@ -113,6 +116,7 @@ function SignUp(props) {
           out now!
         </p>
         <div className="router">
+
           <LinkRouter className="botons botonss" to="/cities">
             <MenuItem value={21}>Show cities</MenuItem>
           </LinkRouter>
@@ -121,11 +125,9 @@ function SignUp(props) {
           </LinkRouter>
         </div>
       </div>
-
       <div>
       <form onSubmit={handleSubmit} id="formup">
         <Box
-        
           sx={{
             width: "27ch",
             "& > :not(style)": { m: 1 },
@@ -133,10 +135,31 @@ function SignUp(props) {
         >
           <div className="textform">
             <h2>Sign up now</h2>
-            <p>Fill in the form below to get instant access:</p>
+            <p>Fill in the form below to get instant access: 
+           <span> Select your country to continue.</span></p>
             <DriveFileRenameOutlineIcon />
           </div>
+          <TextField
+          id="outlined-select-currency"
+          select
+          name="country"
+          defaultValue="unselected"
+          label="country"
+          value={currency}
+          onChange={handleChange}
+          helperText="Please select your country"
+        >
+          {currencies.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+        {currency !== "unselected" ? 
+        <>
           <div className="linee"></div>
+          <GoogleSignUp currencies={currency}/>
+          <FacebookSignUp currencies={currency} />
           <TextField
             helperText="Please enter your name"
             label="Full Name"
@@ -156,21 +179,7 @@ function SignUp(props) {
             type="email"
           />
 
-          <TextField
-            id="outlined-select-currency"
-            select
-            name="country"
-            label="country"
-            value={currency}
-            onChange={handleChange}
-            helperText="Please select your country"
-          >
-            {currencies.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
+         
 
           <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
             <InputLabel htmlFor="outlined-adornment-password">
@@ -206,13 +215,9 @@ function SignUp(props) {
           />
           <div className="buttonsubmit">
               <button type="submit" className="buttonSubm"> Create Account</button>
-              <p>Or sign with</p>
-              <div className="iconss">
-              <GoogleIcon/>
-              <FacebookIcon/>
-              <LinkedInIcon/>
-              </div>
           </div>
+          </>
+            : <p>Select your country</p> }
         </Box>
         </form>
       </div>

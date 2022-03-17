@@ -29,10 +29,38 @@ const userActions = {
 
     signOutUser: (closeUser) => {
         return async (dispatch, getSate) => {
-            const user = await axios.post('http://localhost:4000/api/v1/auth/signOut', {closeUser})
-            console.log(user)
+           // const user = await axios.post('http://localhost:4000/api/v1/auth/signOut', {closeUser})
+           // console.log(user)
             localStorage.removeItem('token')
             dispatch({type: 'user', payload: null});
+        }
+    },
+
+    VerificarToken: (token) => {
+
+        return async (dispatch, getState) => {
+            console.log(token)
+            const user = await axios.get('http://localhost:4000/api/v1/auth/signInToken', {
+                headers: {
+                    'Authorization' : 'Bearer ' + token
+                }
+            })
+            console.log(user)
+            
+            if (user.data.success) {
+                dispatch({ type: 'user', payload: user.data.response });
+                dispatch({
+                    type: 'message',
+                    payload: {
+                        view: true,
+                        message: user.data.message,
+                        success: user.data.success
+                    }
+                });
+            } else {
+                localStorage.removeItem('token')
+            }
+
         }
     }
 }

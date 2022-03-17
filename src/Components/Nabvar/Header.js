@@ -20,7 +20,8 @@ function Header(props) {
   function SignOut(){
     props.signOutUser(props)
   }
-console.log(props)
+  console.log(age)
+
   return (
     <>
       <div className="header">
@@ -38,31 +39,33 @@ console.log(props)
 
         <div className="logouser">
         {props.user ? (<p>{props.user.fullName}</p>) : (<p></p>)}
-          <FormControl sx={{ minWidth: 60 }}>
-            <InputLabel id="demo-simple-select-autowidth-label">
+          <FormControl sx={{ minWidth: 60 }}> 
+
+            <InputLabel className="logoooo" id="demo-simple-select-autowidth-label">
               {" "}
               {props.user ? (<img className="imgprofile" src={props.user.profile}></img>) : (<img src={logoUser}></img>) } 
-              
-            </InputLabel>
+            </InputLabel >
+           
+
             <Select
-              labelId="demo-simple-select-autowidth-label"
-              id="demo-simple-select-autowidth"
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
               value={age}
+              defaultValue="I"
               onChange={handleChange}
               autoWidth
             >
-              <MenuItem value="">
-                <em>Home</em>
-              </MenuItem>
-              <LinkRouter to="/signin">
+             {props.user ===null ? (<div> <LinkRouter to="/signin">
                 <MenuItem value={10}>Sing In</MenuItem>
               </LinkRouter>
 
               <LinkRouter to="/signup">
-                <MenuItem value={21}>Sing Up</MenuItem>
-              </LinkRouter>
-
-              <MenuItem onClick={SignOut}value={31}>Sing Out</MenuItem>
+                <MenuItem value={20}>Sing Up</MenuItem>
+              </LinkRouter></div>):( <LinkRouter to="/home">
+              <MenuItem onClick={SignOut} value={30}>Sing Out</MenuItem>
+              </LinkRouter>)}
+            
+             
             </Select>
           </FormControl>
         </div>
