@@ -1,6 +1,6 @@
 const Itinerary = require("../models/Itinerarios");
 const City = require('../models/cities');
-const { CommentBankOutlined } = require("@mui/icons-material");
+
 const commentsControllers = {
   getComments: async (req, res) => {
     const { id } = req.params;

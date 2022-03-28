@@ -1,0 +1,194 @@
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+const database = 'mytinerary';
+//const collection = 'NEW_COLLECTION_NAME';
+
+// The current database to use.
+use(database);
+
+// Create a new collection.
+db.activities.drop();
+
+db.activities.insertMany([
+
+    {
+      "image":"activity1.png",
+      "title" : "Basilica of Saint Peter",
+      "text": "Spectacular in size and finished by Bernini, the façade of St. Peter's Basilica involved an almost eternal search for harmony combined with majesty. Perhaps Michelangelo's dome is his greatest achievement.",
+      "itineraryId": "6228b4b1ff6926431d4a06d2"
+    },
+     {
+      "image":"activity2.png",
+      "title" : "Saint Peter's Square",
+      "text": "As much as it has been seen in photos and on television, it is necessary to visit it to understand its magnitude, its grandeur, the quiet refuge that emerges behind its colonnade in chaotic Rome.",
+      "itineraryId": "6228b4b1ff6926431d4a06d2"
+    },
+     {
+      "image":"activity3.png",
+      "title" : "The Sistine Chapel",
+      "text": "The Sistine Chapel is one of the treasures of the Vatican, since it houses the frescoes made by the greatest exponent of classical painting: Michelangelo Buonarroti, or better known as Michelangelo.",
+      "itineraryId": "6228b4b1ff6926431d4a06d2"
+    },
+    {
+      "image":"https://photo620x400.mnstatic.com/75a6a98eaa15b04ce29e7fb5307bc8bc/escalera-helicoidal-_-museos-vaticanos.jpg?quality=70&format=pjpg",
+      "title" : "Spiral staircase",
+      "text": "Have you ever had a dream where it seems that you are not going to wake up, that you are going to get stuck in it? Well, this is the sensation produced by the spiral staircase that is located at the end of the visit to the Vatican Museums, where the end is not glimpsed from above due to its optical effect.",
+      "itineraryId": "6228b4b1ff6926431d4a06d3"
+    },
+    {
+      "image":"https://photo620x400.mnstatic.com/efba47cbc7708788561153eb1ca8ceaa/la-guardia-suiza-del-vaticano.jpg?quality=70&format=pjpg",
+      "title" : "Vatican Swiss Guard",
+      "text": "The Swiss Guard is a military body...The Swiss Guard is a military body founded in 1506 and made up of around one hundred members among them two drummers and a chaplain that is in charge, together with the Italian police, of guarding Saint Peter's Square.",
+      "itineraryId": "6228b4b1ff6926431d4a06d3"
+    },
+    {
+      "image":"https://photo620x400.mnstatic.com/07a7a3ad956af7e98dc7c913e1e3ef67/la-piedad-de-miguel-angel.jpg?quality=70&format=pjpg",
+      "title" : "Michelangelo's Pietà",
+      "text": "It was Cardinal Jean Bilhere who commissioned Michelangelo for the most beautiful work of marble existing in Rome in those days. Comparisons are always hateful, but I can assure you that, having seen this sculpture, I can imagine very few sculptures that compete in beauty.",
+      "itineraryId": "6228b4b1ff6926431d4a06d3"
+    },
+      {
+      "image":"activity4.png",
+      "title" : "Botanical Garden",
+      "text": "The state park is home to the Ipiranga Institute of Botany fountains and the Botanical Gardens, a place that allows anyone to be enchanted! The São Paulo Botanical Garden is a spectacular place for a stroll.",
+      "itineraryId": "6228b4b1ff6926431d4a06d3"
+    },
+    {
+      "image":"https://photo620x400.mnstatic.com/d7ede659749724332d11e56dba6646ab/windows-of-the-world.jpg?quality=70&format=pjpg",
+      "title" : "Windows of the World",
+      "text": "Windows of the World is a park...Windows of the World is a theme park that displays miniatures of several of the world's different places and monuments (approximately 60), including the Eiffel Tower, Arc de Triomphe, Taj Mahal, Manhattan, Big Ben, etc.",
+      "itineraryId": "62413742f31123130f813be5"
+    },
+     {
+      "image":"https://photo620x400.mnstatic.com/c4d57ca5150dfcdf49917cf99c4590da/wutong-mountain.jpg?quality=70&format=pjpg",
+      "title" : "Wutong Mountain",
+      "text": "This mountain is very high but it has an amazing view from its top. There is no better place for those who like long marches and sweat the shirt. Wutong Mountain is the highest mountain in Shenzhen, and therefore the highest point in the city.",
+      "itineraryId": "62413742f31123130f813be5"
+    },
+    {
+      "image":"https://photo620x400.mnstatic.com/7a0559c0b72b5901ee9288eae2a34148/jardines-wuan-bo-wuan.jpg?quality=70&format=pjpg",
+      "title" : "Jardines Wuan bo wuan",
+      "text": "Do you want to know one of the most turist Do you want to know one of the most touristic routes? Delve into the life of the Chinese, simply take a walk through the public gardens in the heart of a city where the Chinese are taking a walk at all times.",
+      "itineraryId": "62413742f31123130f813be5"
+    },
+
+    {
+      "image":"https://photo620x400.mnstatic.com/0122fd55beede55203483c43e16c69fb/sea-world.jpg?quality=70&format=pjpg",
+      "title" : "Sea world",
+      "text": "This park is not unique, it is not great but it felt good to go, it is still up to everyone to see if they want to go, but also know that you are at one end of China and across the water is Hong Kong.",
+      "itineraryId": "62413a5c180b78344672a715"
+    },
+
+    {
+      "image":"https://photo620x400.mnstatic.com/17c9db619cff16d1fbddba5e217bcc5a/parque-zhongshan.jpg?quality=70&format=pjpg",
+      "title" : "Park Zhongshan",
+      "text": "Zhongshan Park is very close to where I used to live in Shenzhen, also a 10-minute walk from Taoyuan subway station. Free entrance and the perfect type of park to spend the afternoon and rest a bit.",
+      "itineraryId": "62413a5c180b78344672a715"
+    },
+
+    {
+      "image":"https://photo620x400.mnstatic.com/96272ea2609835552d670ba70c2966b6/shenzhen-university.jpg?quality=70&format=pjpg",
+      "title" : "Shenzhen University",
+      "text": "Windows of the World is a park...Windows of the World is a theme park that displays miniatures of several of the world's different places and monuments (approximately 60), including the Eiffel Tower, Arc de Triomphe, Taj Mahal, Manhattan, Big Ben, etc.",
+      "itineraryId": "62413a5c180b78344672a715"
+    },
+
+    {
+      "image":"https://photo620x400.mnstatic.com/f32fb6c22f248fbfe1c2925a25aaa166/torre-eiffel.jpg?quality=70&format=pjpg",
+      "title" : "Eiffel Tower",
+      "text": "Essential. Worth. It does not matter what they have told you and that it is the most important point of any self-respecting tourist tour. The Eiffel Tower is an exceptional monument and the views from its platforms are amazing.",
+      "itineraryId": "62413b79180b78344672a716"
+    },
+     {
+      "image":"https://photo620x400.mnstatic.com/88c8a28a4ee4e47b35ff1b8b70cfd92b/museo-del-louvre.jpg?quality=70&format=pjpg",
+      "title" : "Louvre Museum",
+      "text": "Visiting the Louvre Museum is an experience that should not be missed, I know that when you go to such a big city for a short time, getting into a Museum may seem like a waste of time to some, but I advise you to drop in even if it is one or two hours through the museum.",
+      "itineraryId": "62413b79180b78344672a716"
+    },
+     {
+      "image":"https://photo620x400.mnstatic.com/d414fecb5abd76d755b152aa102c752f/catedral-de-notre-dame.jpg?quality=70&format=pjpg",
+      "title" : "Notre Dame Cathedral",
+      "text": "There are two visits that can be made to Notre-Dame, which are separate from each other. The first is the visit to the interiors of the Cathedral and the other is the visit to the Towers. Both have their respective queue although the entrance to both is included in the Museum Pass.",
+      "itineraryId": "62413b79180b78344672a716"
+    },
+     {
+      "image":"https://photo620x400.mnstatic.com/614037e83d114c30b06f7eecee55ff80/arco-de-triunfo-de-paris.jpg?quality=70&format=pjpg",
+      "title" : "Paris Arch of Triumph",
+      "text": "The triumphal arch is huge. We reached it from the Champs Elysées at its intersection with the street of the Grand Palais. If you think it's one step away, you're wrong!!! It takes you an important treyo... I don't remember the time, maybe an hour.",
+      "itineraryId": "62413bc5180b78344672a717"
+    },
+     {
+      "image":"https://photo620x400.mnstatic.com/80196e378d193eeda2e0042717ffffa4/museo-de-orsay.jpg?quality=70&format=pjpg",
+      "title" : "Orsay's Museum",
+      "text": "I only had one day in Paris before taking the train to my final destination but the morning at the Musée d'Orsay was well worth it. The museum is huge and since my priority was the Impressionist collection, the visit had to start on the fifth floor.",
+      "itineraryId": "62413bc5180b78344672a717"
+    },
+     {
+      "image":"https://photo620x400.mnstatic.com/8a749b8c591ef1ca96eaa20e8c199f31/panteon-de-paris.jpg?quality=70&format=pjpg",
+      "title" : "A Paris pantheon",
+      "text": "The Pantheon is a masterful monument that stands in the middle of the Latin quarter, making the French feel proud of what it represents and of the great men who lie within.",
+      "itineraryId": "62413bc5180b78344672a717"
+    },
+     {
+      "image":"activity5.png",
+      "title" : "Stone of the chest",
+      "text": "Stone Mountain a rock located in the hills of Mantiqueira near the city of Bento Así Sapuca, a wonderful place to enjoy walking in the middle of nature and enjoy a beautiful view after hiking and climbing the small stone stairs at its top.",
+      "itineraryId": "6228b4b1ff6926431d4a06d3"
+    },
+     {
+      "image":"activity6.png",
+      "title" : "Santos Beaches",
+      "text": "Among the attractions of Santos we could mention its calm, calm and practically waveless waters, ideal for practicing water sports such as sailing, windsurfing and jet skiing.",
+      "itineraryId": "6228b4b1ff6926431d4a06d3"
+    },
+     {
+      "image":"activity7.png",
+      "title" : "Saint Sophia",
+      "text": "Anyone who has been in the great Hagia Sophia, has seen it in photos or has heard of it, will know what these huge medallions are, so typical of this universally known church temple mosque.",
+      "itineraryId": "6228b4b1ff6926431d4a06d4"
+    },
+     {
+      "image":"activity8.png",
+      "title" : "Blue mosque",
+      "text": "Its six minarets sink into the blue sky of Sultanahmet. The impressive Blue Mosque is, together with Aya Sofya, or Hagia Sophia, the most impressive and moving building in Istanbul.",
+      "itineraryId": "6228b4b1ff6926431d4a06d4"
+    },
+     {
+      "image":"activity9.png",
+      "title" : "Grand bazaar",
+      "text": "If there is one place to go shopping in Istanbul, it is the Grand Bazaar.Going through sneakers, jeans and accessories such as bracelets or necklaces of all kinds to spices, antiques or fakes.",
+      "itineraryId": "6228b4b1ff6926431d4a06d4"
+    },
+   
+// ]);
+// The prototype form to create a regular collection:
+/* db.createCollection( <name>,
+  {
+    capped: <boolean>,
+    autoIndexId: <boolean>,
+    size: <number>,
+    max: <number>,
+    storageEngine: <document>,
+    validator: <document>,
+    validationLevel: <string>,
+    validationAction: <string>,
+    indexOptionDefaults: <document>,
+    viewOn: <string>,
+    pipeline: <pipeline>,
+    collation: <document>,
+    writeConcern: <document>
+  }
+) */
+
+// The prototype form to create a time-series collection:
+/* db.createCollection( <name>,
+  {
+    timeseries: {
+      timeField: <string>,
+      metaField: <string>,
+      granularity: <string>
+    },
+    expireAfterSeconds: <number>
+  }
+) */

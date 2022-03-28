@@ -4,9 +4,7 @@ const City = require("../models/cities");
 const ItinerariosController = {
   getitinerarios: async (req, res) => {
     try {
-      const itinerario = await Itinerarios.find().populate("autor", {
-        fullName: 1,
-      });
+      const itinerario = await Itinerarios.find();
       res.json({ success: false, response: { itinerario } });
     } catch (error) {
       console.log(error);
@@ -28,9 +26,10 @@ const ItinerariosController = {
     }
   },
   createItinerarios: async (req, res) => {
-    const { image, name, price, duration } = req.body.input;
+    const { imagen, image, name, price, duration } = req.body;
     new Itinerarios({
       image,
+      imagen,
       name,
       price,
       duration,
