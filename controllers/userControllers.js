@@ -22,7 +22,7 @@ const sendEmail = async (email, uniqueString) => {
     subject: "verification user email",
     html: `
             <div>
-                <h1>Click<a href=http://localhost:4000/api/v1/verify/${uniqueString}>here</a>to confirm your email. Thank You</h1>
+                <h1>Click<a href=https://mitinerary.herokuapp.com/api/v1/verify/${uniqueString}>here</a>to confirm your email. Thank You</h1>
             </div>
               `,
   };
