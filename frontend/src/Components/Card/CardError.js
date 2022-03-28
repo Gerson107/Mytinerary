@@ -14,7 +14,7 @@ class Cards extends React.Component{
   // const [isLoad, setIsload] = useState(false);
 
   // useEffect(() => {
-  //   axios.get(`http://localhost:4000/api/v1/allcities`).then((respuesta) => {
+  //   axios.get(`https://mitinerary.herokuapp.com/api/v1/allcities`).then((respuesta) => {
   //     setData(respuesta.data.response.cities);
   //     setCity(respuesta.data.response.cities);
   //     setIsload(true);
