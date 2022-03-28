@@ -36,9 +36,9 @@ export default function App() {
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
-          {Datos.map((evento) => (
-            
-            <SwiperSlide key={evento.key}>
+          {Datos.map((evento, index) => (
+      
+            <SwiperSlide key={index}>
               <div className="swiper-slide">
                 <div className="img">
                   <img

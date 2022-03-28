@@ -28,7 +28,7 @@
   display: block;
   object-fit: cover;
   width: 100%;
-  height: 100%;
+  height: 90%;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.8) 0%,
@@ -47,14 +47,14 @@
   flex-direction: column;
   color: rgb(255, 255, 255);
   position: relative;
-  bottom: 4.9rem;
+  bottom: 5rem;
   background: linear-gradient(
     rgba(0, 0, 0, 0.02) 0%,
     rgba(3, 3, 3, 0.26) 61.09%,
     rgba(0, 0, 0, 0.322) 91.63%
   );
-  width: 93%;
-  padding: 7px;
+  width: 90%;
+ padding-left: 1rem;
 }
 .carousel_text h2 {
   font-size: 48px;
@@ -118,14 +118,14 @@
   }
   .carousel_detail h3 {
     font-size: 10px;
-    margin-bottom: -7px;
+    margin-bottom: -8px;
   }
   .carousel_detail p {
     font-size: 7px;
   }
   .carousel_detail {
-    bottom: 2.4rem;
-    width: 88%;
+    bottom: 2.9rem;
+    width: 86%;
     padding: 4px;
   }
   .carousel_text h2 {

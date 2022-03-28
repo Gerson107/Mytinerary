@@ -1,8 +1,8 @@
 import React from "react";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import { Link as LinkRouter } from "react-router-dom";
-import { connect } from 'react-redux';
-import userActions from '../../redux/actions/userActions';
+import { connect } from "react-redux";
+import userActions from "../../redux/actions/userActions";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
@@ -15,11 +15,8 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
 import GoogleSignUp from "../googleUser/GoogleSignUp";
-import FacebookSignUp from '../facebookUser/FacebookSignUp'
+import FacebookSignUp from "../facebookUser/FacebookSignUp";
 import "./signin.css";
-
-
-
 
 const currencies = [
   {
@@ -61,27 +58,24 @@ const currencies = [
 ];
 
 function SignUp(props) {
-
   const handleSubmit = (event) => {
-    event.preventDefault()
-    let formup = document.getElementById('formup')
-    const userData={
-      fullName: event.target[4].value, 
+    event.preventDefault();
+
+    const userData = {
+      fullName: event.target[4].value,
       lastName: event.target[6].value,
       email: event.target[8].value,
-      country: event.target[0].value, 
+      country: event.target[0].value,
       password: event.target[10].value,
-      profile: event.target[12].value,
-      from:'form-Signup'
-    }
-    formup.reset()
-    props.signUpUser(userData) 
-  
-  }
+      profile: event.target[13].value,
+      from: "form-Signup",
+    };
+
+    props.signUpUser(userData);
+  };
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
- 
 
   const [values, setValues] = React.useState({
     amount: "",
@@ -90,11 +84,11 @@ function SignUp(props) {
     weightRange: "",
     showPassword: false,
   });
-  const [currency, setCurrency] = React.useState("unselected");
+  const [currency, setCurrency] = React.useState('unselected');
   const handleChangee = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
-  console.log(currency)
+  
   const handleChange = (event) => {
     setCurrency(event.target.value);
   };
@@ -116,7 +110,6 @@ function SignUp(props) {
           out now!
         </p>
         <div className="router">
-
           <LinkRouter className="botons botonss" to="/cities">
             <MenuItem value={21}>Show cities</MenuItem>
           </LinkRouter>
@@ -126,107 +119,113 @@ function SignUp(props) {
         </div>
       </div>
       <div>
-      <form onSubmit={handleSubmit} id="formup">
-        <Box
-          sx={{
-            width: "27ch",
-            "& > :not(style)": { m: 1 },
-          }}
-        >
-          <div className="textform">
-            <h2>Sign up now</h2>
-            <p>Fill in the form below to get instant access: 
-           <span> Select your country to continue.</span></p>
-            <DriveFileRenameOutlineIcon />
-          </div>
-          <TextField
-          id="outlined-select-currency"
-          select
-          name="country"
-          defaultValue="unselected"
-          label="country"
-          value={currency}
-          onChange={handleChange}
-          helperText="Please select your country"
-        >
-          {currencies.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
-        {currency !== "unselected" ? 
-        <>
-          <div className="linee"></div>
-          <GoogleSignUp currencies={currency}/>
-          <FacebookSignUp currencies={currency} />
-          <TextField
-            helperText="Please enter your name"
-            label="Full Name"
-            name="fullName"
-            type="text"
-          />
-          <TextField
-            helperText="Plase enter your Last Name"
-            label="lastName"
-            name="lastName"
-            type="text"
-          />
-          <TextField
-            helperText="Plase enter your E-mail"
-            label="E-mail"
-            name="email"
-            type="email"
-          />
+        <form onSubmit={handleSubmit} >
+          <Box
+            sx={{
+              width: "27ch",
+              "& > :not(style)": { m: 1 },
+            }}
+          >
+            <div className="textform">
+              <h2>Sign up now</h2>
+              <p>
+                Fill in the form below to get instant access:
+                <span> Select your country to continue.</span>
+              </p>
+              <DriveFileRenameOutlineIcon />
+            </div>
+            <TextField
+              id="outlined-select-currency"
+              select
+              name="country"
+              label="country"
+              value={currency}
+              onChange={handleChange}
+              helperText="Please select your country"
+            >
+              {currencies.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+            {currency !== "unselected" ? (
+              <>
+                <div className="linee"></div>
+                <GoogleSignUp currencies={currency} />
+                <FacebookSignUp currencies={currency} />
+                <TextField
+                  helperText="Please enter your name"
+                  label="Full Name"
+                  name="fullName"
+                  type="text"
+                />
+                <TextField
+                  helperText="Plase enter your Last Name"
+                  label="lastName"
+                  name="lastName"
+                  type="text"
+                />
+                <TextField
+                  helperText="Plase enter your E-mail"
+                  label="E-mail"
+                  name="email"
+                  type="email"
+                />
 
-         
-
-          <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
-            <InputLabel htmlFor="outlined-adornment-password">
-              Password
-            </InputLabel>
-            <OutlinedInput
-              id="outlined-adornment-password"
-              type={values.showPassword ? "text" : "password"}
-              value={values.password}
-              name="password"
-              onChange={handleChangee("password")}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
-              label="password"
-            />
-          </FormControl>
-          <TextField
-            helperText="Plase enter your image"
-           
-            label="profile"
-            name="profile"
-            type="text"
-          />
-          <div className="buttonsubmit">
-              <button type="submit" className="buttonSubm"> Create Account</button>
-          </div>
-          </>
-            : <p>Select your country</p> }
-        </Box>
+                <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
+                  <InputLabel htmlFor="outlined-adornment-password">
+                    Password
+                  </InputLabel>
+                  <OutlinedInput
+                    id="outlined-adornment-password"
+                    type={values.showPassword ? "text" : "password"}
+                    value={values.password}
+                    name="password"
+                    onChange={handleChangee("password")}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                        >
+                          {values.showPassword ? (
+                            <VisibilityOff />
+                          ) : (
+                            <Visibility />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                    label="password"
+                  />
+                </FormControl>
+                <TextField
+                  helperText="Plase enter your image"
+                  label="profile"
+                  name="profile"
+                  type="text"
+                />
+                <div className="buttonsubmit">
+                  <button type="submit" className="buttonSubm">
+                    Create Account
+                  </button>
+                </div>
+              </>
+            ) : (
+              <p>Select your country</p>
+            )}
+          </Box>
         </form>
       </div>
     </div>
   );
 }
 
-const mapDispatchToProps ={
+const mapDispatchToProps = {
   signUpUser: userActions.signUpUser,
-}
+};
 
-export default connect(null, mapDispatchToProps) (SignUp);
+export default connect(null, mapDispatchToProps)(SignUp);

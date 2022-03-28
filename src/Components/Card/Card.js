@@ -8,39 +8,7 @@ import { connect } from 'react-redux';
 import Filter from '../filter/filter'
 
 class Cards extends React.Component{
-  // const [data, setData] = useState();
-  // const [city, setCity] = useState();
-  // const [searchResult, setSearchResult] = useState();
-  // const [isLoad, setIsload] = useState(false);
-
-  // useEffect(() => {
-  //   axios.get(`http://localhost:4000/api/v1/allcities`).then((respuesta) => {
-  //     setData(respuesta.data.response.cities);
-  //     setCity(respuesta.data.response.cities);
-  //     setIsload(true);
-  //   });
-  // }, []);
-
-  // useEffect(() => {
-  //   if (searchResult !== undefined) {
-  //     setCity(searchResult);
-  //   }
-  // }, [searchResult]);
-
-  // const handleChange = (e) => {
-  //   filters(e.target.value);
-  // };
-
-  // const filters = (search) => {
-  //   console.log(search);
-  //   console.log(data);
-  //   setSearchResult(
-  //     data.filter((data) =>
-  //       data.name.toLowerCase().startsWith(search.toLowerCase().trim())
-  //     )
-  //   );
-  // };
-  
+ 
   state = {
     arrayCities: []
   }
@@ -49,12 +17,12 @@ class Cards extends React.Component{
     console.log('estoy en componentdidmount')
     if(this.props.cities.length < 1) {
       this.props.fetchearCities()
-      console.log('hice el pedido')
+     
     }
   }
  
   render() {
-    console.log(this.props)
+    console.log(this.props.cities)
 
     return (
     <>

@@ -1,44 +1,110 @@
-.itinerarioscard{
- 
+.activities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.carstyle {
+  margin-top: 2rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #645f5f1a !important;
+}
+.MuiCardHeader-title {
+  font-size: 40px !important;
+  font-weight: bold !important;
+}
+.MuiCardHeader-content span {
+  color: rgb(255, 255, 255) !important;
+}
+.time {
+  color: white;
+  margin-bottom: 1rem !important;
+}
+.likeslength{
+  color: white;
+  margin-left: 0.5rem;
+  font-size: 27px;
+}
 
+.MuiCardActions-root button {
+  color: white;
 }
-.carstyle{
-    margin-top: 2rem;
-    margin: 1rem;
-    background-color: #28352e!important;
-    
-}
-.MuiCardHeader-title{
-    font-size: 40px!important;
-    font-weight: bold!important;
-}
-.MuiCardHeader-content span{
-    color: rgb(255, 255, 255)!important;
-
-}
-
-.time{
-    color: white;
-    margin-bottom: 1rem!important;
+.avatar {
+  height: 3rem !important;
+  width: 3rem !important;
 }
 .imagenIti{
-    box-shadow: 3px 1px 4px 4px rgba(14, 12, 12, 0.39);
+  border-radius: 4px;
 }
-.MuiCardActions-root button{
-    color: white;
+.arrowmore{
+  animation: scrollTop 0.5s alternate ease infinite;
 }
-.avatar{
-   height: 3rem!important;
-   width:  3rem!important;
+.arrowmore:hover{
+  background-color:#824d48 ;
+  border-radius: 50px;
+}
+.datename{
+  width: 50%;
+  display: flex;
+  color: white;
+  font-weight: 600;
+}
+.datename p {
+  margin: 0;
+}
+.comment{
+  font-size: 18px;
+  font-weight: 500;
+  background-color: white;
+  min-height: 1rem;
+  border-radius: 4px;
+  width: 70%;
+  padding: 8px;
+}
+.comment p {
+  margin: 0;
+}
+.containercomment{
+  height: auto;
+  width: 80%;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+.concomment{
+  border-radius: 5px;
+  height: 10rem;
+  width: 90%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(92, 97, 97, 0.596);
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+.comments{
+  width: 100%;
+  display: flex!important;
+  justify-content: center!important;
+  align-items: center!important;
+  
+}
+.papercomments{
+  width: 80%!important;
+ 
 }
 @media screen and (max-width: 820px) {
-    .MuiCardHeader-title{
-        font-size: 20px!important;
-    }
-    .imagenIti{
-        height: 14rem!important;
-    }
-    .MuiCardHeader-subheader{
-        font-size: 12px!important;
-    }
+  .MuiCardHeader-title {
+    font-size: 20px !important;
+  }
+  .imagenIti {
+    height: 14rem !important;
+  }
+  .MuiCardHeader-subheader {
+    font-size: 12px !important;
+  }
 }

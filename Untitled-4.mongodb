@@ -1,0 +1,118 @@
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+const database = 'mytinerary';
+//const collection = 'NEW_COLLECTION_NAME';
+
+// The current database to use.
+use(database);
+
+// Create a new collection.
+db.activities.drop();
+
+db.activities.insertMany([
+
+    {
+      "image":"activity1.png",
+      "title" : "Basilica of Saint Peter",
+      "text": "Spectacular in size and finished by Bernini, the façade of St. Peter's Basilica involved an almost eternal search for harmony combined with majesty. Perhaps Michelangelo's dome is his greatest achievement.",
+      "itineraryId": "6228b4b1ff6926431d4a06d2"
+    },
+     {
+      "image":"activity2.png",
+      "title" : "Saint Peter's Square",
+      "text": "As much as it has been seen in photos and on television, it is necessary to visit it to understand its magnitude, its grandeur, the quiet refuge that emerges behind its colonnade in chaotic Rome.",
+      "itineraryId": "6228b4b1ff6926431d4a06d2"
+    },
+     {
+      "image":"activity3.png",
+      "title" : "The Sistine Chapel",
+      "text": "The Sistine Chapel is one of the treasures of the Vatican, since it houses the frescoes made by the greatest exponent of classical painting: Michelangelo Buonarroti, or better known as Michelangelo.",
+      "itineraryId": "6228b4b1ff6926431d4a06d2"
+    },
+    {
+      "image":"https://photo620x400.mnstatic.com/75a6a98eaa15b04ce29e7fb5307bc8bc/escalera-helicoidal-_-museos-vaticanos.jpg?quality=70&format=pjpg",
+      "title" : "Spiral staircase",
+      "text": "Have you ever had a dream where it seems that you are not going to wake up, that you are going to get stuck in it? Well, this is the sensation produced by the spiral staircase that is located at the end of the visit to the Vatican Museums, where the end is not glimpsed from above due to its optical effect.",
+      "itineraryId": "6228b4b1ff6926431d4a06d3"
+    },
+    {
+      "image":"https://photo620x400.mnstatic.com/efba47cbc7708788561153eb1ca8ceaa/la-guardia-suiza-del-vaticano.jpg?quality=70&format=pjpg",
+      "title" : "Vatican Swiss Guard",
+      "text": "The Swiss Guard is a military body...The Swiss Guard is a military body founded in 1506 and made up of around one hundred members among them two drummers and a chaplain that is in charge, together with the Italian police, of guarding Saint Peter's Square.",
+      "itineraryId": "6228b4b1ff6926431d4a06d3"
+    },
+    {
+      "image":"https://photo620x400.mnstatic.com/07a7a3ad956af7e98dc7c913e1e3ef67/la-piedad-de-miguel-angel.jpg?quality=70&format=pjpg",
+      "title" : "Michelangelo's Pietà",
+      "text": "It was Cardinal Jean Bilhere who commissioned Michelangelo for the most beautiful work of marble existing in Rome in those days. Comparisons are always hateful, but I can assure you that, having seen this sculpture, I can imagine very few sculptures that compete in beauty.",
+      "itineraryId": "6228b4b1ff6926431d4a06d3"
+    },
+      {
+      "image":"activity4.png",
+      "title" : "Botanical Garden",
+      "text": "The state park is home to the Ipiranga Institute of Botany fountains and the Botanical Gardens, a place that allows anyone to be enchanted! The São Paulo Botanical Garden is a spectacular place for a stroll.",
+      "itineraryId": "6228b4b1ff6926431d4a06d3"
+    },
+     {
+      "image":"activity5.png",
+      "title" : "Stone of the chest",
+      "text": "Stone Mountain a rock located in the hills of Mantiqueira near the city of Bento Así Sapuca, a wonderful place to enjoy walking in the middle of nature and enjoy a beautiful view after hiking and climbing the small stone stairs at its top.",
+      "itineraryId": "6228b4b1ff6926431d4a06d3"
+    },
+     {
+      "image":"activity6.png",
+      "title" : "Santos Beaches",
+      "text": "Among the attractions of Santos we could mention its calm, calm and practically waveless waters, ideal for practicing water sports such as sailing, windsurfing and jet skiing.",
+      "itineraryId": "6228b4b1ff6926431d4a06d3"
+    },
+     {
+      "image":"activity7.png",
+      "title" : "Saint Sophia",
+      "text": "Anyone who has been in the great Hagia Sophia, has seen it in photos or has heard of it, will know what these huge medallions are, so typical of this universally known church temple mosque.",
+      "itineraryId": "6228b4b1ff6926431d4a06d4"
+    },
+     {
+      "image":"activity8.png",
+      "title" : "Blue mosque",
+      "text": "Its six minarets sink into the blue sky of Sultanahmet. The impressive Blue Mosque is, together with Aya Sofya, or Hagia Sophia, the most impressive and moving building in Istanbul.",
+      "itineraryId": "6228b4b1ff6926431d4a06d4"
+    },
+     {
+      "image":"activity9.png",
+      "title" : "Grand bazaar",
+      "text": "If there is one place to go shopping in Istanbul, it is the Grand Bazaar.Going through sneakers, jeans and accessories such as bracelets or necklaces of all kinds to spices, antiques or fakes.",
+      "itineraryId": "6228b4b1ff6926431d4a06d4"
+    },
+   
+// ]);
+// The prototype form to create a regular collection:
+/* db.createCollection( <name>,
+  {
+    capped: <boolean>,
+    autoIndexId: <boolean>,
+    size: <number>,
+    max: <number>,
+    storageEngine: <document>,
+    validator: <document>,
+    validationLevel: <string>,
+    validationAction: <string>,
+    indexOptionDefaults: <document>,
+    viewOn: <string>,
+    pipeline: <pipeline>,
+    collation: <document>,
+    writeConcern: <document>
+  }
+) */
+
+// The prototype form to create a time-series collection:
+/* db.createCollection( <name>,
+  {
+    timeseries: {
+      timeField: <string>,
+      metaField: <string>,
+      granularity: <string>
+    },
+    expireAfterSeconds: <number>
+  }
+) */

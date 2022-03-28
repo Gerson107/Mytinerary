@@ -22,13 +22,12 @@ function SignIn(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    let formin = document.getElementById('formin')
     const logedUser = {
-      email: event.target[0].value,
-      password: event.target[2].value,
+      email: event.target[2].value,
+      password: event.target[4].value,
       from: "form-Signup"
     }
-    formin.reset()
+    
     props.signInUser(logedUser)
     console.log(logedUser)
   }

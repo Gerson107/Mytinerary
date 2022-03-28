@@ -9,7 +9,6 @@ module.exports = passport.use(new jwtStrategy({
     secretOrKey: process.env.SECRET_KEY},(jwt_payload, done) => {
         User.findOne({_id:jwt_payload.id})
         .then(user => {
-            console.log(user)
             if (user) {
                 return done(null, user)
             }

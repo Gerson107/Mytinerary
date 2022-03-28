@@ -1,64 +1,93 @@
-const Itinerarios = require('../models/Itinerarios')
+const Itinerarios = require("../models/Itinerarios");
+const City = require("../models/cities");
 
 const ItinerariosController = {
-
-    getitinerios: async (req, res)=>{
-        let itinerario
-        let error = null
-
-        try{
-            itinerario= await Itinerarios.find()
-           
-        }catch(err){
-            error = err
-            console.log(error)
-        }
-        res.json({
-            response: error ? 'ERROR' : {itinerario},
-            success: error ? false : true,
-            error: error
-        })
-    },
-
-    getOneItinerario: async(req, res)=> {
-        const id = req.params.id
-        let itinerario 
-        let error = null
-
-        try{
-            itinerario = await Itinerarios.findOne({_id:id})
-        }catch(err){
-            error = err
-        }
-        res.json({
-            response: error ? 'ERROR' : ciudad,
-            succes: error ? false : true,
-        })
-    },
-    createItinerarios: async(req, res)=> {
-        const { image, name, price, duration} = req.body.input
-        new Itinerarios({
-             image,
-            name,
-             price,
-               duration,              
-            }).save()
-                .then((respuesta)=> res.json({respuesta}))
-        },
-
-    deleteItinerarios: async(req, res)=> {
-        const id = req.params.id
-
-        await Itinerarios.findOneAndDelete({_id:id})
-    },
-    
-    updateItinerarios: async(req, res)=> {
-        const id = req.params.id
-        const itinerarios= req.body.dataInput
-
-        let ciudaddb = await Itinerarios.findOneAndUpdate({_id:id}, itinerarios)
+  getitinerarios: async (req, res) => {
+    try {
+      const itinerario = await Itinerarios.find().populate("autor", {
+        fullName: 1,
+      });
+      res.json({ success: false, response: { itinerario } });
+    } catch (error) {
+      console.log(error);
+      res.json({ success: false, message: "Algo anda mal" });
     }
-    
+  },
 
-}
-module.exports = ItinerariosController
+  getOneItinerario: async (req, res) => {
+    const id = req.params.id;
+    try {
+      const itinerario = await Itinerarios.findOne({ _id: id });
+      res.json({ success: false, response: { itinerario } });
+    } catch (err) {
+      console.log(err);
+      res.json({
+        success: false,
+        message: "algo a salido mal",
+      });
+    }
+  },
+  createItinerarios: async (req, res) => {
+    const { image, name, price, duration } = req.body.input;
+    new Itinerarios({
+      image,
+      name,
+      price,
+      duration,
+    })
+      .save()
+      .then((respuesta) => res.json({ respuesta }));
+  },
+
+  deleteItinerarios: async (req, res) => {
+    const id = req.params.id;
+
+    await Itinerarios.findOneAndDelete({ _id: id });
+  },
+
+  updateItinerarios: async (req, res) => {
+    const id = req.params.id;
+    const itinerarios = req.body.dataInput;
+
+    let ciudaddb = await Itinerarios.findOneAndUpdate({ _id: id }, itinerarios);
+  },
+
+  LikeAndDislike: async (req, res) => {
+    const id = req.params.id;
+    const user = req.user.id;
+    const cityid = req.params.cityId;
+    let itinerario;
+    let error = null;
+    let allitinerarios;
+    let allcities;
+
+    try {
+      itinerario = await Itinerarios.findOne({ _id: id });
+
+      if (itinerario.likes.includes(user)) {
+        await Itinerarios.findByIdAndUpdate(
+          { _id: id },
+          { $pull: { likes: user } },
+          { new: true }
+        );
+        console.log("estoy aqui");
+        allcities = await City.findOne({ _id: cityid }).populate("Itinerarios");
+        allitinerarios = allcities.Itinerario;
+        res.json({ success: true, response: allitinerarios });
+      } else {
+        await Itinerarios.findByIdAndUpdate(
+          { _id: id },
+          { $push: { likes: user } },
+          { new: true }
+        );
+        allcities = await City.findOne({ _id: cityid }).populate("Itinerarios");
+        allitinerarios = allcities.Itinerarios;
+        res.json({ success: true, response: allitinerarios });
+      }
+    } catch (e) {
+      error = e;
+      res.json({ success: false, response: error });
+    }
+  },
+};
+module.exports = ItinerariosController;

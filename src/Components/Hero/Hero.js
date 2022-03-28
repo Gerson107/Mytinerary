@@ -1,9 +1,9 @@
 import React from "react";
-import cityone from "./imagen1.svg";
-import citytwo from "./imagen2.svg";
-import cityfour from "./imagen4.svg";
-import cityfive from "./imagen5.svg";
-import citysix from "./imagen6.svg";
+import cityone from "./imagen1.png";
+import citytwo from "./imagen2.png";
+import cityfour from "./imagen4.png";
+import cityfive from "./imagen5.png";
+import citysix from "./imagen6.png";
 import arrowIcon from "./arrow.svg";
 
 import { Link as LinkRouter } from "react-router-dom";

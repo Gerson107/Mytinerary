@@ -11,10 +11,12 @@
 .header_div img{
  width: 10rem;
 }
+.link{
+  margin: 1rem;
+}
 .nav {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
 }
 .link:hover {
   text-decoration: #c8a09d 4px underline;
@@ -25,13 +27,31 @@
   font-size: 18px;
   color: white;
 }
-
-
-
+.selectc{
+  color: black!important;
+  font-weight: 500!important;
+}
+.imgprofile{
+  margin-right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.nameUser p {
+  margin-bottom: 0.3rem;
+}
+.nameUser{
+  margin-top: -0.1rem;
+  margin-right: 1rem;
+  
+}
 .logouser{
   display: flex;
 border: none!important;
 color: white!important;
+
+
 }
 .MuiOutlinedInput-root{
   color: white!important;

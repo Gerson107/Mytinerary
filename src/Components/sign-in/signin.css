@@ -1,16 +1,12 @@
 .formulary {
   display: flex !important;
   justify-content: center !important;
-  gap: 4rem;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin: 3rem 2rem;
 }
 .MuiBox-root {
   padding: 1rem;
   border: solid 1px;
-  height: 40rem;
+  height: 55rem;
   width: 28rem !important;
   background-color: hsl(0, 12%, 89%);
 }
@@ -38,6 +34,7 @@
 .titleform {
   max-width: 38rem;
   display: flex;
+  margin-right: 4rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -62,7 +59,7 @@
   margin-bottom: 1rem !important;
 }
 .botons {
-  margin-top: 2rem;
+  margin: 2rem 1rem;
   background-color: #ffffff;
   width: 5rem;
   font-size: 16px;
@@ -91,7 +88,6 @@
 }
 .router {
   display: flex;
-  gap: 1rem;
 }
 .buttonsubmit{
   display: flex;
@@ -124,7 +120,7 @@
   .MuiBox-root{
     display: flex!important;
     flex-direction: column!important;
-    height: 48rem;
+    height: 57rem!important;
     width: 20rem!important;
   }
   .formulary{

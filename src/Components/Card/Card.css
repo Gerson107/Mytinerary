@@ -5,8 +5,8 @@
 .cities_search {
     height: 100%;
     margin-bottom: 2rem;
-    /* position: -webkit-sticky;
-    position: sticky; */
+     position: -webkit-sticky;
+    position: sticky; 
     top: 20px;
 }
 .cities_search h1{
@@ -43,7 +43,6 @@ label{
 }
 .cities_card{
     display: flex;
-    gap: 2rem;
     justify-content: center;
     flex-wrap: wrap;
     margin: 2rem;
@@ -77,6 +76,7 @@ label{
 }
 .cards{
     width: 17rem;
+    margin: 1rem;
 }
 .imgn{
     height: 19rem;
@@ -100,6 +100,9 @@ label{
     background-color: white;
     color: #824d48;
     border: solid #824d48;
+  }
+  @media screen and (max-width:1024px){
+   
   }
  
 @media screen and (max-width: 820px) {
