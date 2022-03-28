@@ -256,6 +256,8 @@ function RecipeReviewCard(props) {
                 </div>
                 </>
                 : 
+                <>
+                <div className="datename"> <p>{dato.name}</p></div>
                 <div className=" containercomment" key={index}>
                 <Avatar src={dato.profile} className="avatar" aria-label="recipe"></Avatar>
                 <div
@@ -265,10 +267,10 @@ function RecipeReviewCard(props) {
                     setModifid(event.currentTarget.textContent)
                   }
                 >
-                <p className='dataname'>{dato.name}</p> <p className='datacoment'>{dato.comentary}</p> 
+                <p className='datacoment'>{dato.comentary}</p> 
                 </div>
               </div>
-                     
+              </>  
                 ))}
               </div>
 
