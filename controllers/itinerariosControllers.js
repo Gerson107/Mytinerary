@@ -59,7 +59,7 @@ const ItinerariosController = {
     let error = null;
     let allitinerarios;
     let allcities;
-
+console.log(user)
     try {
       itinerario = await Itinerarios.findOne({ _id: id });
 
@@ -69,9 +69,8 @@ const ItinerariosController = {
           { $pull: { likes: user } },
           { new: true }
         );
-        console.log("estoy aqui");
         allcities = await City.findOne({ _id: cityid }).populate("Itinerarios");
-        allitinerarios = allcities.Itinerario;
+        allitinerarios = allcities.Itinerarios;
         res.json({ success: true, response: allitinerarios });
       } else {
         await Itinerarios.findByIdAndUpdate(
