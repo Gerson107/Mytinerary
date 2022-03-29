@@ -28,7 +28,7 @@ function CardDetail(props) {
   if (!data.element) {
     return <h1>..loading</h1>;
   }
-  console.log(data)
+
   return (
     
     <>

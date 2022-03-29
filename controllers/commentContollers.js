@@ -4,7 +4,6 @@ const City = require('../models/cities');
 const commentsControllers = {
   getComments: async (req, res) => {
     const { id } = req.params;
-
     try {
      const comments = await Itinerary.findById(id).populate("comments.userId");
       res.json({ success: true, response: comments, error: null });
@@ -20,10 +19,8 @@ const commentsControllers = {
   
     try {
      await Itinerary.findOneAndUpdate(
-        { _id: itinerario }, {$push: {comments: {comentary: comment, userId: user, profile: profile, name: name, date: Date.now()}}})
-      const data = await City.findOne({_id: cityId}).populate('Itinerarios')
-        res.json({ success: true, response: data.Itinerarios, message:"Gracias por dejarnos tu comentario"})
-        
+        { _id: itinerario }, {$push: {comments: {comentary: comment, userId: user, profile: profile, name: name, date: Date.now()}}}, {new: true})
+        .then(response => res.json({ success: true, response: response, message:"Gracias por dejarnos tu comentario"}))  
       } catch (e) {
       res.json({ success: false, message:"algo ha salido mal" });
     }
@@ -34,10 +31,9 @@ const commentsControllers = {
     const user = req.user._id
     try {
       await Itinerary.findOneAndUpdate(
-        {"comments._id": commentId},{$pull: {comments: {_id: commentId}}})
-        const data = await City.findOne({_id: cityId}).populate('Itinerarios')
-        res.json({ success: true, response: data.Itinerarios, message:"hs eliminado tu comentario"})
-    
+        {"comments._id": commentId},{$pull: {comments: {_id: commentId}}}, {new: true})
+        .then(response => res.json({ success: true, response: response, message:"Has eliminado tu comentario"}))
+        
     } catch (error) {
       console.log(error)
       res.json({
@@ -50,9 +46,8 @@ const commentsControllers = {
     const user = req.user._id
     try {
       await Itinerary.findOneAndUpdate(
-        {"comments._id": commentId },{ $set: { "comments.$.comentary": comment } });
-        const data = await City.findOne({_id: cityId}).populate('Itinerarios')
-        res.json({ success: true, response: data.Itinerarios, message:"tu comentario a sido modificado" });
+        {"comments._id": commentId },{ $set: { "comments.$.comentary": comment } }, {new: true})
+        .then(response => res.json({ success: true, response: response, message:"Has modificado tu comentario"}))
       } catch (e) {
       console.log(e)
       res.json({

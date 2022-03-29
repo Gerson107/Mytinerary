@@ -7,7 +7,7 @@ require("./config/database");
 
 const ROUTER = require("./routes/routes");
 const app = express();
-const PORT = process.env.PORT || 400
+const PORT = process.env.PORT || 4000
 const HOST = process.env.HOST || '0.0.0.0'
 const path = require('path');
 const { ppid } = require("process");

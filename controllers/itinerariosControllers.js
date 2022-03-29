@@ -59,17 +59,17 @@ const ItinerariosController = {
     let error = null;
     let allitinerarios;
     let allcities;
-console.log(user)
+
     try {
       itinerario = await Itinerarios.findOne({ _id: id });
- 
+
       if (itinerario.likes.includes(user)) {
         await Itinerarios.findByIdAndUpdate(
           { _id: id },
           { $pull: { likes: user } },
           { new: true }
         )
-       .then(response => response.json({success: true, response: response}) )
+       .then(response => res.json({ success: true, response: response }) )
         
       } else {
         await Itinerarios.findByIdAndUpdate(
@@ -77,7 +77,7 @@ console.log(user)
           { $push: { likes: user } },
           { new: true }
         )
-        .then(response => response.json({ success: true, response:response }))
+        .then(response => res.json({ success: true, response: response }) )
       }
     } catch (e) {
       error = e;

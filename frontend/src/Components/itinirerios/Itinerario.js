@@ -51,8 +51,7 @@ function RecipeReviewCard(props) {
       .then((res) => setdata( res ));
     setReload(!reload);
   }
-  console.log(props.data)
-
+ 
   async function addComentar(itinerarioId) {
     const commentData = {
       itinerario: itinerarioId,

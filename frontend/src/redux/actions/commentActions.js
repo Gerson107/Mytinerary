@@ -9,7 +9,6 @@ const commentAction = {
         { comment },
         { headers: { Authorization: `Bearer  ${token}` } }
       );
-      console.log(res)
       dispatch({
         type: "message",
         payload: {
@@ -29,7 +28,6 @@ const commentAction = {
         { comment },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      console.log(res)
       dispatch({
         type: "message",
         payload: {
