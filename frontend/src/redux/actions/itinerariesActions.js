@@ -18,6 +18,7 @@ const itinerayActions = {
   },
     
   LikeAndDislike: (itinerarioId, cityId) => {
+    console.log(itinerarioId)
      const token = localStorage.getItem("token");
     return async () => {
      
@@ -26,7 +27,7 @@ const itinerayActions = {
          ` https://mitinerary.herokuapp.com/api/v1/itinerarios/likes/${itinerarioId}/${cityId}`, {}, 
           { headers: { Authorization: "Bearer " + token } }
         );
-        console.log(res)
+        console.log(res.data.response)
         return res.data.response;
       } catch (e) {
         console.log(e);

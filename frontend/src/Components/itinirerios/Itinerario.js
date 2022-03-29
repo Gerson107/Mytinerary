@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState} from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -40,9 +39,7 @@ const ExpandMore = styled((props) => {
 }));
 
 function RecipeReviewCard(props) {
-  const [data, setdata] = useState({ element: props.data });
-  const { id } = useParams();
-  const [itinerario, setItinerario] = useState();
+  const [data, setdata] = useState( props.data );
   const [inputText, setInputText] = useState();
   const [modifid, setModifid] = useState();
   const [reload, setReload] = useState(false);
@@ -51,10 +48,10 @@ function RecipeReviewCard(props) {
   async function likesOrDislikes(itinerarioId) {
     await props
       .LikeAndDislike(itinerarioId, props.CityId)
-      .then((res) => setdata({ element: res }));
+      .then((res) => setdata( res ));
     setReload(!reload);
   }
-  console.log(props.data);
+  console.log(props.data)
 
   async function addComentar(itinerarioId) {
     const commentData = {
@@ -64,7 +61,7 @@ function RecipeReviewCard(props) {
     };
     await props
       .addComment(commentData)
-      .then((res) => setdata({ element: res }), setInputText(""));
+      .then((res) => setdata( res ), setInputText(""));
     setReload(!reload);
   }
   async function deletecomentar(event) {
@@ -75,7 +72,7 @@ function RecipeReviewCard(props) {
     };
     await props
       .deleteComment(commentData)
-      .then((res) => setdata({ element: res }));
+      .then((res) => setdata( res ));
   }
   async function midifidComentar(event) {
     const commentData = {
@@ -85,7 +82,7 @@ function RecipeReviewCard(props) {
     };
     await props
       .updateComment(commentData)
-      .then((res) => setdata({ element: res }));
+      .then((res) => setdata( res ));
   }
 
   const handleExpandClick = () => {
@@ -95,14 +92,13 @@ function RecipeReviewCard(props) {
     <>
       <div className="itinerarioscards">
        
-        {data.element.map((city, index) => (
-          <Card className="carstyle" key={index}>
+          <Card className="carstyle" key={data._id}>
             <CardHeader
               className="cardheader"
               avatar={
                 <Avatar
                   className="avatar"
-                  src={process.env.PUBLIC_URL + `/imagenes/${city.image}`}
+                  src={process.env.PUBLIC_URL + `/imagenes/${data.image}`}
                   aria-label="recipe"
                 ></Avatar>
               }
@@ -111,24 +107,24 @@ function RecipeReviewCard(props) {
                   <MoreVertIcon />
                 </IconButton>
               }
-              title={city.name}
-              subheader={city.hashtags}
+              title={data.name}
+              subheader={data.hashtags}
             />
 
             <Typography className="time" sx={{ fontSize: 14 }} gutterBottom>
-              Time: {city.duration},
+              Time: {data.duration},
             </Typography>
 
             <CardMedia
               className="imagenIti"
               component="img"
               height="400"
-              src={process.env.PUBLIC_URL + `/imagenes/${city.imagen}`}
+              src={process.env.PUBLIC_URL + `/imagenes/${data.imagen}`}
               alt="Paella dish"
             />
             <CardContent>
               <Typography className="time" sx={{ fontSize: 14 }} gutterBottom>
-                Price: {"💰".repeat(parseInt(city.price))}
+                Price: {"💰".repeat(parseInt(data.price))}
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
@@ -139,11 +135,11 @@ function RecipeReviewCard(props) {
                 <IconButton
                   aria-label="add to favorites"
                   onClick={() => {
-                    likesOrDislikes(city._id);
+                    likesOrDislikes(data._id);
                   }}
                 >
                   {" "}
-                  {city.likes.includes(props.user.id) ? (
+                  {data?.likes.includes(props.user?.id) ? (
                     <FavoriteIcon sx={{ color: "red" }} />
                   ) : (
                     <FavoriteIcon />
@@ -157,7 +153,7 @@ function RecipeReviewCard(props) {
                   sx={{ color: "white" }}
                 />
               )}
-              <p className="likeslength">{city.likes.length}</p>
+              <p className="likeslength">{data.likes.length}</p>
 
               <ExpandMore
                 expand={expanded}
@@ -170,10 +166,10 @@ function RecipeReviewCard(props) {
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardContent className="activities">
-                <Activities itineraryId={city._id} />
+                <Activities itineraryId={data._id} />
               </CardContent>
               <div className="concomment">
-                {city.comments.map((dato, index) => (
+                {data.comments.map((dato, index) => (
                    props.user ? 
                    <>
                    <div className="datename"> <p>{dato.name}</p></div>
@@ -298,14 +294,14 @@ function RecipeReviewCard(props) {
                     sx={{ p: "10px" }}
                     aria-label="directions"
                   >
-                  {props.user ? ( <DirectionsIcon onClick={() => addComentar(city._id)} />) : ( <DirectionsIcon onClick={() =>  Swal.fire("Please register or login")} />)}
+                  {props.user ? ( <DirectionsIcon onClick={() => addComentar(data._id)} />) : ( <DirectionsIcon onClick={() =>  Swal.fire("Please register or login")} />)}
                    
                   </IconButton>
                 </Paper>
               </div>
             </Collapse>
           </Card>
-        ))}
+        ))
       </div>
     </>
   );

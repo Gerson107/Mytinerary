@@ -28,7 +28,9 @@ function CardDetail(props) {
   if (!data.element) {
     return <h1>..loading</h1>;
   }
+  console.log(data)
   return (
+    
     <>
       <div className="detail_pais">
         <div className="detail_info">
@@ -70,7 +72,9 @@ function CardDetail(props) {
         </div>
       </div>
       <h2>Itinerarios</h2>
-      <Itinerario CityId={id} data={data.element.Itinerarios} />
+      {data?.element.Itinerarios.map( data => 
+      <Itinerario CityId={id} data={data} />
+      )}
     </>
   );
 }
