@@ -4,7 +4,7 @@ const helmet = require ('helmet');
 const express = require("express");
 const passport = require('passport')
 const morgan = require('morgan');
-const connect = requiere('connect');
+const connect = require('connect');
 require("./config/database");
 
 
