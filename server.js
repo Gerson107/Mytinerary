@@ -1,6 +1,6 @@
 require("dotenv").config();
 const cors = require("cors");
-import helmet from 'helmet';
+const helmet = require ('helmet');
 const express = require("express");
 const passport = require('passport')
 require("./config/database");
