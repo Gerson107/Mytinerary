@@ -1,5 +1,6 @@
 require("dotenv").config();
 const cors = require("cors");
+import helmet from 'helmet';
 const express = require("express");
 const passport = require('passport')
 require("./config/database");
@@ -14,6 +15,8 @@ const { ppid } = require("process");
 
 //midelwares
 app.use(cors());
+app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}))
 app.use(express.json());
 app.use(passport.initialize())
 app.use("/api/v1", ROUTER);
