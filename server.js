@@ -3,6 +3,8 @@ const cors = require("cors");
 const helmet = require ('helmet');
 const express = require("express");
 const passport = require('passport')
+const morgan = require('morgan');
+const connect = requiere('connect');
 require("./config/database");
 
 
@@ -14,9 +16,11 @@ const path = require('path');
 const { ppid } = require("process");
 
 //midelwares
+app.use(connect());
 app.use(cors());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}))
+app.use(morgan('commont'))
 app.use(express.json());
 app.use(passport.initialize())
 app.use("/api/v1", ROUTER);
