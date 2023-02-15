@@ -16,6 +16,9 @@ const path = require('path');
 const { ppid } = require("process");
 
 //midelwares
+app.use(function(req, res, next) {
+    res.setHeader('Content-Security-policy-Report-Only',
+    "Default-src 'self'; font-src 'self'; script-src 'self'; style-src 'self'; frame-src 'self'")})
 app.use(connect());
 app.use(cors());
 app.use(helmet());
