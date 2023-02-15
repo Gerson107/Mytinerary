@@ -5,7 +5,7 @@ const commentAction = {
     const token = localStorage.getItem("token");
     return async (dispatch, getState) => {
       const res = await axios.post(
-        "https://mitinerary.herokuapp.com/api/v1/itinerarios/comment",
+        "https://mytinerary-l2gz.onrender.com/api/v1/itinerarios/comment",
         { comment },
         { headers: { Authorization: `Bearer  ${token}` } }
       );
@@ -24,7 +24,7 @@ const commentAction = {
     const token = localStorage.getItem("token");
     return async (dispatch, getState) => {
       const res = await axios.post(
-        "https://mitinerary.herokuapp.com/api/v1/itinerarios/deletecomment/",
+        "https://mytinerary-l2gz.onrender.com/api/v1/itinerarios/deletecomment/",
         { comment },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -44,7 +44,7 @@ const commentAction = {
     const token = localStorage.getItem("token");
     return async (dispatch, getState) => {
       const res = await axios.put(
-        "https://mitinerary.herokuapp.com/api/v1//itinerarios/comment",
+        "https://mytinerary-l2gz.onrender.com/api/v1//itinerarios/comment",
         { comment },
         { headers: { Authorization: "Bearer " + token } }
       );
