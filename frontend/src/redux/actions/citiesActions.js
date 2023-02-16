@@ -5,7 +5,6 @@ const citesActions = {
     fetchearCities: () => {
         return async(dispatch, getState)=>{
             const res = await axios.get('https://mytinerary-l2gz.onrender.com/api/v1/allcities')
-            console.log(res)
             dispatch({type:'fetch', payload:res.data.response.cities})
         }
     },
@@ -32,7 +31,7 @@ const citesActions = {
     },
     chargeCities: (name, ciudad)=>{
         return async(dispatch, getState)=>{
-            const res = await axios.post('https://mitinerary.herokuapp.com/api/v1/allcities',{name,ciudad})
+            const res = await axios.post('http://localhost:4000/api/v1/allcities',{name,ciudad})
             dispatch({type:'chargeCities', payload:res.data.response.cities})
         }
     }

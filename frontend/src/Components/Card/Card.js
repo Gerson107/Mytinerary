@@ -14,7 +14,6 @@ class Cards extends React.Component{
   }
   componentDidMount() { 
     
-    console.log('estoy en componentdidmount')
     if(this.props.cities.length < 1) {
       this.props.fetchearCities()
      
@@ -22,7 +21,6 @@ class Cards extends React.Component{
   }
  
   render() {
-    console.log(this.props.cities)
 
     return (
     <>

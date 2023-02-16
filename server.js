@@ -14,9 +14,9 @@ const path = require('path');
 const { ppid } = require("process");
 
 //midelwares
-app.use(function(req, res, next) {
-    res.setHeader('Content-Security-policy-Report-Only',
-    "Default-src 'self'; font-src 'self'; script-src 'self'; style-src 'self'; frame-src 'self'")})
+// app.use(function(req, res, next) {
+//     res.setHeader('Content-Security-policy-Report-Only',
+//     "Default-src 'self'; font-src 'self'; script-src 'self'; style-src 'self'; frame-src 'self'")})
 app.use(connect());
 app.use(cors());
 app.use(express.json());
@@ -29,4 +29,4 @@ if(process.env.NODE_ENV === 'production') {
         res.sendFile(path.join(__dirname+"/client/build/index.html"))
     })
 }
-app.listen(PORT, HOST, () => console.log("Server Ready on PORT" + PORT));
+app.listen(PORT, HOST, () => console.log("Server Ready on PORT" + HOST, PORT));
