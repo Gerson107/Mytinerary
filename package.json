@@ -2,6 +2,9 @@
   "name": "mytinerary",
   "version": "1.0.0",
   "description": "this is backend ",
+  "engines": {
+    "node": "18.x"
+  },
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
