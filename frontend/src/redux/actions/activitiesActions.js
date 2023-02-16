@@ -5,7 +5,7 @@ const activitiesActions = {
     activityOfItinerary: (itineraryId) => {
         return async (dispatch, getState) => {
             try {
-                let response = await axios.get('https://mytinerary-l2gz.onrender.com/v1/activities/'+itineraryId)
+                let response = await axios.get('https://mitinerary.herokuapp.com/v1/activities/'+itineraryId)
                 console.log(response.data)
                 return { success: true, response: response.data.response };
                      

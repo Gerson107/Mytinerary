@@ -3,7 +3,7 @@ import axios from "axios";
 const userActions = {
   signUpUser: (userData) => {
     return async (dispatch, getState) => {
-      const res = await axios.post("https://mytinerary-l2gz.onrender.com/api/v1/auth/signUp", {
+      const res = await axios.post("https://mitinerary.herokuapp.com/api/v1/auth/signUp", {
         userData,
       });
      
@@ -21,7 +21,7 @@ const userActions = {
   getAllUsers: () => {
     return async (dispatch, getState) => {
       try {
-        const user = await axios.get("https://mytinerary-l2gz.onrender.com/api/v1/users");
+        const user = await axios.get("https://mitinerary.herokuapp.com/api/v1/users");
         dispatch({ type: 'user', payload: user.data.response });
        } catch (error) {
          console.log(error);
@@ -32,7 +32,7 @@ const userActions = {
   signInUser: (logedUser) => {
     return async (dispatch, getState) => {
       const user = await axios.post(
-        "https://mytinerary-l2gz.onrender.com/api/v1/auth/signIn",
+        "https://mitinerary.herokuapp.com/api/v1/auth/signIn",
         { logedUser }
 
       );
@@ -63,7 +63,7 @@ const userActions = {
     return async (dispatch, getState) => {
     
       const user = await axios.get(
-        "https://mytinerary-l2gz.onrender.com/api/v1/auth/signInToken",
+        "https://mitinerary.herokuapp.com/api/v1/auth/signInToken",
         {
           headers: {
             Authorization: "Bearer " + token,
