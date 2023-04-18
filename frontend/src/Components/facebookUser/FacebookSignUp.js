@@ -31,7 +31,7 @@ console.log(res.picture.data.url)
     <FacebookLogin
     cssClass="buttonsocial my-facebook-button-class"
     icon="fa-facebook"
-    textButton=" SignUp with Facebook"
+    textButton=" With Facebook"
       appId="654128065856450"
       autoLoad={false}
       fields="name,email,picture"

@@ -21,13 +21,12 @@ function Footer() {
       <div className="Footer_text">
         <h2>Say Hello</h2>
         <p>Cra 19 #23-08</p>
-        <p>57+3133761464</p>
         <p>57+3105157158</p>
         <p>Suport@mytinerary.com</p>
       </div>
 
-      <div className="Footer_text">
-        <p>© 2022 MyTinerary Inc. All rights reserved.</p>
+      <div className="Footer_text rights">
+        <h4>© 2022 MyTinerary Inc. All rights reserved.</h4>
       </div>
 
       <div className="footer_icon">

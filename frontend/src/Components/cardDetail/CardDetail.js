@@ -35,7 +35,6 @@ function CardDetail(props) {
       <div className="detail_pais">
         <div className="detail_info">
           <div className="title_flag">
-            <img></img>
             <h1 className="detalletitulo"> {data.element.name}</h1>
           </div>
           <div className="detail_datos">
@@ -68,7 +67,7 @@ function CardDetail(props) {
           <img
             className="imagcity"
             src={process.env.PUBLIC_URL + `/imagenes/${data.element.image}`}
-          ></img>
+          alt="imageelem"></img>
         </div>
       </div>
       <h2>Itinerarios</h2>

@@ -127,7 +127,7 @@ function SignUp(props) {
             }}
           >
             <div className="textform">
-              <h2>Sign up now</h2>
+              <h2>Sign Up Now</h2>
               <p>
                 Fill in the form below to get instant access:
                 <span> Select your country to continue.</span>
@@ -152,7 +152,7 @@ function SignUp(props) {
             {currency !== "unselected" ? (
               <>
                 <div className="linee"></div>
-                <GoogleSignUp currencies={currency} />
+                {/* <GoogleSignUp currencies={currency} /> */}
                 <FacebookSignUp currencies={currency} />
                 <TextField
                   helperText="Please enter your name"

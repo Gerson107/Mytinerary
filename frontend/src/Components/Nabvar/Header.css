@@ -1,7 +1,8 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin: 2rem;
+  margin: 10rem;
+  margin-top:4rem;
 }
 .header_div {
   display: flex;
@@ -9,14 +10,14 @@
   justify-content: space-between;
 }
 .header_div img{
- width: 10rem;
+ width: 15rem;
 }
-.link{
-  margin: 1rem;
-}
+
 .nav {
   display: flex;
   flex-direction: row;
+  gap: 2rem
+
 }
 .link:hover {
   text-decoration: #c8a09d 4px underline;
@@ -24,8 +25,9 @@
 .link {
   text-decoration: none;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 28px;
   color: white;
+  gap: 2rem;
 }
 .selectc{
   color: black!important;
@@ -66,5 +68,10 @@ color: white!important;
 @media screen and (max-width: 768px) {
   .header {
     margin: 1rem;
+  }
+  .header_div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 }

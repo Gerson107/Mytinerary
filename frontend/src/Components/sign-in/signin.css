@@ -1,13 +1,17 @@
 .formulary {
-  display: flex !important;
-  justify-content: center !important;
-  margin: 3rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10rem;
 }
 .MuiBox-root {
-  padding: 1rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
   border: solid 1px;
-  height: 55rem;
-  width: 28rem !important;
+  border-radius: 5px;
+  width: 24rem !important; 
   background-color: hsl(0, 12%, 89%);
 }
 .MuiOutlinedInput-root {
@@ -23,7 +27,7 @@
 .textform {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 .linee {
   border: 1px solid rgba(0, 0, 0, 0.329);
@@ -34,7 +38,6 @@
 .titleform {
   max-width: 38rem;
   display: flex;
-  margin-right: 4rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -120,25 +123,25 @@
   .MuiBox-root{
     display: flex!important;
     flex-direction: column!important;
-    height: 57rem!important;
-    width: 20rem!important;
+    /* height: 57rem!important; */
+    /* width: 20rem!important; */
   }
-  .formulary{
+  /* .formulary{
     margin: 1rem;
-  }
+  } */
   }
   @media screen and (max-width: 830px) {
     .formulary{
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       margin: 1rem;
     }
     }
     @media screen and (max-width: 830px) {
       .MuiBox-root{
         width: 15rem!important;
-        height: 52rem;
-        padding: 0.3;
+        /* height: 52rem; */
       }
       }

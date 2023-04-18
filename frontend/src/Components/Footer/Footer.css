@@ -2,7 +2,6 @@
   background-color: #92763a;
   display: flex;
   justify-content: space-between;
-  padding: 3rem;
   color: white;
   width: 0 auto;
 }
@@ -14,6 +13,17 @@
 .Footer_text {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.rights {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.link{
+  font-size: 17px;
 }
 .Footer h2 {
   font-size: 18px;
@@ -24,9 +34,15 @@
   font-size: 12px;
   font-weight: 400;
 }
+.footer_icon {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 .footer_icon img {
   margin-right: 2rem;
 }
+
  
   /* .Footer_column{
         display: flex;
@@ -39,3 +55,11 @@
     display: flex;
   }
 
+  @media screen and (max-width: 400px) {
+    .footer_icon {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+    }
+  }

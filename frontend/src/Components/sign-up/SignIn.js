@@ -64,7 +64,7 @@ function SignIn(props) {
         <p>Not a member?</p>
         <LinkRouter to="/signup">
           <button type="submit" className="btnsingup">
-            SignUp
+            Sign Up
           </button>
         </LinkRouter>
       </div>
@@ -83,11 +83,10 @@ function SignIn(props) {
           <h2>Sign in</h2>
           <FingerprintTwoToneIcon sx={{ fontSize: 50 }} />
         </div>
-        <GoogleSignIn/>
-        <FacebookSignIn/>
+        {/* <GoogleSignIn/> */}
         <TextField
           id="outlined-name"
-          label="name"
+          label="UserName"
          value={name}
          onChange={handleChange}
           type="text"
@@ -119,9 +118,12 @@ function SignIn(props) {
         </FormControl>
         <div className="botonsignin">
           <button type="submit" className="btnsingin">
-            SignIn
+            Sign In
           </button>
+
         </div>
+        <FacebookSignIn/>
+
       </Box>
     </div>
   );

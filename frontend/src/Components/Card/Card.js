@@ -6,6 +6,7 @@ import "./Card.css";
 import citiesActions from '../../redux/actions/citiesActions';
 import { connect } from 'react-redux';
 import Filter from '../filter/filter'
+import CircularProgress from '@mui/material/CircularProgress';
 
 class Cards extends React.Component{
  
@@ -32,7 +33,7 @@ class Cards extends React.Component{
 
         <div className="cities_card">
          
-           {this.props.cities.length === 0 ? (<h1> City no fund</h1>) :
+           {this.props.cities.length === 0 ? (<CircularProgress/>) :
              this.props.cities && this.props.cities.map((city) => (
               <Card className="cards" key={city._id}>
                 <Card.Img

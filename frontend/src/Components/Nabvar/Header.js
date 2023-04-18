@@ -24,7 +24,7 @@ function Header(props) {
     <>
       <div className="header">
         <div className="header_div">
-          <img src={logo}></img>
+          <img src={logo} alt="logo"></img>
           <div className="nav">
             <LinkRouter to="home" className="link">
               Home

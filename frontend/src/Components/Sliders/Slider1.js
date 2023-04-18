@@ -21,7 +21,7 @@ export default function App() {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
         </div>
         <Swiper
-          slidesPerView={4}
+          slidesPerView={3}
           spaceBetween={30}
           loop={true}
           loopFillGroupWithBlank={true}
@@ -43,7 +43,7 @@ export default function App() {
                 <div className="img">
                   <img
                     src={process.env.PUBLIC_URL + `/imagenes/${evento.image}`} 
-                  />
+                  alt="imagtal"/>
                   <div className="carousel_detail">
                     <h3>{evento.name}</h3>
                     <p>{evento.ciudad}</p>
