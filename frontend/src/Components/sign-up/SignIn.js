@@ -93,9 +93,9 @@ function SignIn(props) {
         />
 
         <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">
+          <inputLabel htmlFor="outlined-adornment-password">
             Password
-          </InputLabel>
+          </inputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
             type={values.showPassword ? "text" : "password"}
