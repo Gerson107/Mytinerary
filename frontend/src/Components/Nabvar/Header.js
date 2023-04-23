@@ -43,9 +43,9 @@ function Header(props) {
               id="demo-simple-select-autowidth-label"
             >
               {props.user ? (
-                <img className="imgprofile" src={props.user.profile}></img>
+                <img className="imgprofile" src={props.user.profile} alt="imgUser"></img>
               ) : (
-                <img src={logoUser}></img>
+                <img  className="logoUser" src={logoUser} alt="logouser"></img>
               )}
             </InputLabel>
 
