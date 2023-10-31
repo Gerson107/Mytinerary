@@ -4,7 +4,7 @@ const itinerayActions = {
 
   fetchearItinerarios: () => {
     return async(dispatch, getState)=>{
-        const res = await axios.get('https://mytinerary-l2gz.onrender.com/api/v1/allitinerarios')
+        const res = await axios.get('https://mytinerary-383s.onrender.com/api/v1/allitinerarios')
         console.log(res)
         dispatch({type:'fetch', payload: res.data.response})
     }
@@ -12,7 +12,7 @@ const itinerayActions = {
 
   getOneItinerarios: (id) => {
     return async (dispatch, getState) => {
-      const res = await axios.get('https://mytinerary-l2gz.onrender.com/api/v1/allitinerarios/' + id)
+      const res = await axios.get('https://mytinerary-383s.onrender.com/api/v1/allitinerarios/' + id)
       return res
     }
   },
@@ -23,7 +23,7 @@ const itinerayActions = {
      
       try {
        const res = await axios.put(
-         ` https://mytinerary-l2gz.onrender.com/api/v1/itinerarios/likes/${itinerarioId}/${cityId}`, {}, 
+         `https://mytinerary-383s.onrender.com/api/v1/itinerarios/likes/${itinerarioId}/${cityId}`, {}, 
           { headers: { Authorization: "Bearer " + token } }
         );
         console.log(res)
