@@ -24,7 +24,10 @@ function Header(props) {
     <>
       <div className="header">
         <div className="header_div">
+          <div className="img">
           <img src={logo} alt="logo"></img>
+
+          </div>
           <div className="nav">
             <LinkRouter to="home" className="link">
               Home
@@ -33,20 +36,20 @@ function Header(props) {
               Cities
             </LinkRouter>
           </div>
-        </div>
 
-        <div className="logouser">
-          {props.user ? <p className="nameUser">{props.user.fullName}</p> : <p></p>}
-          <FormControl sx={{ minWidth: 60 }}>
-            <InputLabel
-              className="logoooo"
-              id="demo-simple-select-autowidth-label"
-            >
-              {props.user ? (
+          <div className="logouser">
+          {props.user ? (
                 <img className="imgprofile" src={props.user.profile} alt="imgUser"></img>
               ) : (
                 <img  className="logoUser" src={logoUser} alt="logouser"></img>
               )}
+          {props.user ? <p className="nameUser">{props.user.fullName}</p> : <p className="nameUser">Start</p>}
+          <FormControl color="info" sx={{ minWidth: 60 }}>
+            <InputLabel
+              className="log"
+              id="demo-simple-select-autowidth-label"
+            >
+              
             </InputLabel>
 
             <Select
@@ -77,6 +80,9 @@ function Header(props) {
             </Select>
           </FormControl>
         </div>
+        </div>
+
+        
       </div>
     </>
   );
